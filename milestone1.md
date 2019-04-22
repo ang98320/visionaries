@@ -21,11 +21,15 @@ tracking shipments and mangaging what a business has and needs is easy with Visi
 
 ### 1
 
-
-<img src="/Paper%20Prototype%201/Overview.jpg" width="500" height="650">
-<img src="/Paper%20Prototype%201/Main.jpg" width="500" height="650">
-<img src="/Paper%20Prototype%201/New.jpg" width="500" height="650">
-<img src="/Paper%20Prototype%201/Inventory.jpg" width="500" height="650">
-<img src="/Paper%20Prototype%201/Visualization.jpg" width="500" height="650">
+*Overview*  
+<img src="/Paper%20Prototype%201/Overview.jpg" width="500" height="650">  
+*Main*  
+<img src="/Paper%20Prototype%201/Main.jpg" width="500" height="650">  
+*New*  
+<img src="/Paper%20Prototype%201/New.jpg" width="500" height="650">  
+*Inventory*  
+<img src="/Paper%20Prototype%201/Inventory.jpg" width="500" height="650">  
+*Visualization*  
+<img src="/Paper%20Prototype%201/Visualization.jpg" width="500" height="650">  
 
 ### 2
