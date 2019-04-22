@@ -15,6 +15,7 @@ tracking shipments and mangaging what a business has and needs is easy with Visi
 ### Storyboard 2
 **Description**
 *This storyboard shows a situation where the user would want to access the inventory data they previously saved using the app.*
+<br>
 <img src="/Storyboard%202/Storyboard2.png" width="650" height="400">
 
 ### Paper Prototype 1
