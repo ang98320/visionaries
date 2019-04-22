@@ -52,7 +52,7 @@ Could also be modified to allow the user to browse their entire inventory that h
 <img src="/Paper%20Proto%202/Camera.jpg" width="500" height="650">
 
 **Login**
-*Login screen for users.**
+*Login screen for users.*
 <img src="/Paper%20Proto%202/Login.jpg" width="500" height="650">
 
 **Inventory**
