@@ -11,6 +11,7 @@ Making inventory management easier to use than ever before, with built in invoic
 tracking shipments and mangaging what a business has and needs is easy with Visionaries.
 
 ### Storyboard 1
+![Storyboard 1](./Storyboard 1/storyboard1.png)
 
 ### Storyboard 2
 **Description**
