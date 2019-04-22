@@ -10,16 +10,11 @@
 Making inventory management easier to use than ever before, with built in invoice readers, and in-app inventory tracking,
 tracking shipments and mangaging what a business has and needs is easy with Visionaries.
 
-### Storyboards
+### Storyboard 1
 
-### 1
+### Storyboard 2
 
-
-### 2
-
-### Prototypes
-
-### 1
+### Paper Prototype 1
 
 **Overview**  
 *Shows the overview of all major screens. The user photographs a physical spreadsheet and the app will scrape its data and inventory the content.*  
@@ -42,4 +37,4 @@ Could also be modified to allow the user to browse their entire inventory that h
 *Allows the user to visualize their inventory in the form of graphs to quickly browse what they have in stock.*  
 <img src="/Paper%20Prototype%201/Visualization.jpg" width="500" height="650">  
 
-### 2
+### Paper Prototype 2
