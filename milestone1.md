@@ -21,15 +21,25 @@ tracking shipments and mangaging what a business has and needs is easy with Visi
 
 ### 1
 
-*Overview*  
+**Overview**  
+*Shows the overview of all major screens. The user photographs a physical spreadsheet and the app will scrape its data and inventory the content.*  
 <img src="/Paper%20Prototype%201/Overview.jpg" width="500" height="650">  
-*Main*  
+
+**Main**  
+*Contains the 3 buttons that link to the following pages: New, Inventory, and Visualization.*  
 <img src="/Paper%20Prototype%201/Main.jpg" width="500" height="650">  
-*New*  
+
+**New**  
+*The photo ccapturing screen which is used to photograph data sheets that are to be added.*  
 <img src="/Paper%20Prototype%201/New.jpg" width="500" height="650">  
-*Inventory*  
+
+**Inventory**  
+*Allows the user to browse through the previously added datasets and to add/remove datasets. 
+Could also be modified to allow the user to browse their entire inventory that had been added from the photographed datasets.*  
 <img src="/Paper%20Prototype%201/Inventory.jpg" width="500" height="650">  
-*Visualization*  
+
+**Visualization**  
+*Allows the user to visualize their inventory in the form of graphs to quickly browse what they have in stock.*  
 <img src="/Paper%20Prototype%201/Visualization.jpg" width="500" height="650">  
 
 ### 2
