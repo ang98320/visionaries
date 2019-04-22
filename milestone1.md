@@ -13,6 +13,9 @@ tracking shipments and mangaging what a business has and needs is easy with Visi
 ### Storyboard 1
 
 ### Storyboard 2
+**Description**
+*This storyboard shows a situation where the user would want to access the inventory data they previously saved using the app.*
+<img src="/Storyboard%202/Storyboard2.png" width="500" height="650">
 
 ### Paper Prototype 1
 
@@ -29,7 +32,7 @@ tracking shipments and mangaging what a business has and needs is easy with Visi
 <img src="/Paper%20Prototype%201/New.jpg" width="500" height="650">  
 
 **Inventory**  
-*Allows the user to browse through the previously added datasets and to add/remove datasets. 
+*Allows the user to browse through the previously added datasets and to add/remove datasets.
 Could also be modified to allow the user to browse their entire inventory that had been added from the photographed datasets.*  
 <img src="/Paper%20Prototype%201/Inventory.jpg" width="500" height="650">  
 
@@ -63,4 +66,3 @@ Could also be modified to allow the user to browse their entire inventory that h
 *Page that allows users to utilized the newly OCR'd inventory sheets to track and match packages.*
 <br>
 <img src="/Paper%20Proto%202/Inventory.jpg" width="650" height="500">
-
