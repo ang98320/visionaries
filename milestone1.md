@@ -50,27 +50,27 @@ Could also be modified to allow the user to browse their entire inventory that h
 
 ### Paper Prototype 2
 
-**OVERVIEW**
+**OVERVIEW**  
 *All the main screens layed out. OCR API will read invoice, translate into CSV, where user can then manage inventory digitally.*
 <br>
 <img src="/Paper%20Proto%202/Overview.jpg" width="650" height="500">
 
-**Home Screen**
+**Home Screen**  
 *Sliding gallery for users to manage their current and past inventories. Includes navigation to Camera to add new photos, as well as methods to remove and access to settings.*
 <br>
 <img src="/Paper%20Proto%202/Main.jpg" width="650" height="500">
 
-**Camera**
+**Camera**  
 *Screen that takes pictures to feed into OCR*
 <br>
 <img src="/Paper%20Proto%202/Camera.jpg" width="650" height="500">
 
-**Login**
+**Login**  
 *Login screen for users.*
 <br>
 <img src="/Paper%20Proto%202/Login.jpg" width="650" height="500">
 
-**Inventory**
+**Inventory**  
 *Page that allows users to utilized the newly OCR'd inventory sheets to track and match packages.*
 <br>
 <img src="/Paper%20Proto%202/Inventory.jpg" width="650" height="500">
