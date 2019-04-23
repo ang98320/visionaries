@@ -1,2 +1,2 @@
 # visionaries
-COGS 121 OCR Project
+COGS 121 - Speed Reading for Dyslexia
