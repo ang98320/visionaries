@@ -19,7 +19,7 @@ The main target users of this app are people with mild to moderate dyslexia. Dys
 
 #### Storyboard 2
 **Description**
-*This storyboard shows a situation where the user would want to access the inventory data they previously saved using the app.*
+*This storyboard shows a student who forgot to read an article for class, but is able to quickly read it using the app.*
 <br>
 <img src="/Storyboard%202/Storyboard2.jpg" width="650" height="400">
 
