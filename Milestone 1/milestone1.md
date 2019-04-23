@@ -8,7 +8,7 @@ Important news articles made readable for all, whether you are on a time crunch 
 
 #### Proposal
 
-The main target users of this app are people with mild to moderate dyslexia. Dyslexia affects one's ability to read efficiently: our app makes use of speed-reading to help those with dyslexia. We also aim to make our app general purpose so that any person can read and improve their reading efficiency. Our current plan is to use Google's News API to gather news articles and a speed reader API to generate speed reading formatted articles for our users. We may also include user login with Google/Facebook APIs so that they may save favorite articles and keep track of their reading history.
+The main target users of this app are people with mild to moderate dyslexia. Since nobody in this group is affected by dyslexia, we are not part of the core user base. Dyslexia affects one's ability to read efficiently: our app makes use of speed-reading to help those with dyslexia. We also aim to make our app general purpose so that any person can read and improve their reading efficiency. Our current plan is to use Google's News API to gather news articles and a speed reader API to generate speed reading formatted articles for our users. We may also include user login with Google/Facebook APIs so that they may save favorite articles and keep track of their reading history.
 
 [What is speed-reading?](http://www.zapreader.com/)
 
