@@ -21,7 +21,7 @@ The main target users of this app are people with mild to moderate dyslexia. Dys
 **Description**
 *This storyboard shows a situation where the user would want to access the inventory data they previously saved using the app.*
 <br>
-<img src="/Storyboard%202/Storyboard2.png" width="650" height="400">
+<img src="/Storyboard%202/Storyboard2.jpg" width="650" height="400">
 
 ### Paper Prototype 1
 
