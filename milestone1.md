@@ -23,6 +23,8 @@ The main target users of this app are people with mild to moderate dyslexia. Dys
 <br>
 <img src="/Storyboard%202/Storyboard2.jpg" width="650" height="400">
 
+#### The following Paper Prototypes corresponded to our original idea - an OCR scanner that reads physical data sheets and parses the data into an app. This idea was originally aimed for optometrists to inventory their incoming orders.  
+
 ### Paper Prototype 1
 
 **Overview**  
