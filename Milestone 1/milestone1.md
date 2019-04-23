@@ -13,7 +13,7 @@ The main target users of this app are people with mild to moderate dyslexia. Sin
 [What is speed-reading?](http://www.zapreader.com/)
 
 #### Storyboard 1
-| ![Storyboard1](./Milestone%201/Storyboard%201/storyboard1.png) |
+| ![Storyboard1](/Milestone%201/Storyboard%201/storyboard1.png) |
 |:--:|
 | *This storyboard illustrates a person with dyslexia trying to read the news* |
 
