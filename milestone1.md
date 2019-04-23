@@ -1,17 +1,16 @@
 # Visionaries
 
-## Alex Ng
-## Shane Gilbert
-## Jiajun Chen (Jim Chen)
-## Cruz Rico
+### Alex Ng | Cruz Rico | Jiajun (Jim) Chen | Shane Gilbert
 
 ### Visionaries Pitch
 
-Making inventory management easier to use than ever before, with built in invoice readers, and in-app inventory tracking,
-tracking shipments and mangaging what a business has and needs is easy with Visionaries.
+Important news articles made readable for all, whether you are on a time crunch or have difficulty focusing on long blocks of text in general, this app is for you! Reading has never been more convenient.
 
 ### Storyboard 1
-![Storyboard1](./Storyboard1/storyboard1.png)
+| ![Storyboard1](./Storyboard1/storyboard1.png) |
+|:--:|
+| *This storyboard illustrates a person with dyslexia trying to read the news* |
+
 
 ### Storyboard 2
 **Description**
