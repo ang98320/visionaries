@@ -13,7 +13,7 @@ The main target users of this app are people with mild to moderate dyslexia. Sin
 [What is speed-reading?](http://www.zapreader.com/)
 
 #### Storyboard 1
-| ![Storyboard1](./Milestone1/Storyboard 1/storyboard1.png) |
+| ![Storyboard1](./Milestone%201/Storyboard%201/storyboard1.png) |
 |:--:|
 | *This storyboard illustrates a person with dyslexia trying to read the news* |
 
@@ -21,7 +21,7 @@ The main target users of this app are people with mild to moderate dyslexia. Sin
 **Description**
 *This storyboard shows a student who forgot to read an article for class, but is able to quickly read it using the app.*
 <br>
-<img src="/Storyboard%202/Storyboard2.jpg" width="650" height="400">
+<img src="/Milestone%201/Storyboard%202/Storyboard2.jpg" width="650" height="400">
 
 #### The following Paper Prototypes corresponded to our original idea - an OCR scanner that reads physical data sheets and parses the data into an app. This idea was originally aimed for optometrists to inventory their incoming orders.  
 
@@ -73,4 +73,4 @@ Could also be modified to allow the user to browse their entire inventory that h
 **Inventory**  
 *Page that allows users to utilized the newly OCR'd inventory sheets to track and match packages.*
 <br>
-<img src="/Paper%20Proto%202/Inventory.jpg" width="650" height="500">
+<img src="/Milestone%201/Paper%20Prototype%202/Inventory.jpg" width="650" height="500">
