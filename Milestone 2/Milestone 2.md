@@ -7,13 +7,15 @@
 
 | ![screenshot0](/Milestone%202/ui0.png) |
 |:--:|
-| *3a. This storyboard illustrates a person with dyslexia trying to read the news* |
+| *3a. This is our demo page where users can learn what a speed-reader is* |
+
 | ![screenshot1](/Milestone%202/ui1.png) |
 |:--:|
-| *3b. This storyboard illustrates a person with dyslexia trying to read the news* |
+| *3b. This is our home page where reading content is displayed* |
+
 | ![screenshot2](/Milestone%202/ui2.png) |
 |:--:|
-| *3c. This storyboard illustrates a person with dyslexia trying to read the news* |
+| *3c. This is our speed-reader which presents words one at a time* |
 
 4. As noted earlier, our screenshots are completely different from the prototypes in milestone1. This is because we changed our idea from an OCR reader to a speed-reader.
 5. Will demonstrate on localhost
