@@ -1,36 +1,67 @@
-function helloWorld() {
-  console.log("hello world");
-  window.alert("Hello World!");
+// Google News API Key
+// a4a03d7d0df7480e8b52461a0e39fb77
+data = 0
+currentArticle = 0
+
+$(document).ready(function(){
+  console.log("hello from speedreader.js");
+  getTrendingNews(function() {
+    console.log("done");
+    console.log(data.articles);
+    loadNewsArticles(data.articles);
+  });
+});
+
+function getTrendingNews(callback) {
+  var url = 'https://newsapi.org/v2/top-headlines?' +
+          'country=us&' +
+          'apiKey=a4a03d7d0df7480e8b52461a0e39fb77';
+  var req = new Request(url);
+  fetch(req)
+      .then(function(response) {
+          //console.log(response.json());
+          return response.json();
+      })
+      .then(function(json) {
+        data = json
+        callback();
+      })
 }
 
-function test(){
-  $("#test_area").html("<h3>Good choice</h3>")
-
-  if ($('#x').is(":checked"))
-{
-  $('#test_main').html("<h2>You chose x</h2>");
-}
-  else {
-      $('#test_main').html("<h2>You chose o</h2>");
+function loadNewsArticles(articles) {
+  console.log("total articles: " + articles.length);
+  for (var i = 0; i < 8; i++) {
+    console.log(articles[i].description);
+    $("#article-"+i).html("<h3>"+articles[i].description+"</h3>");
   }
 }
 
+function initReader(id) {
+  console.log(id);
+  currentArticle = id;
+}
 
-/*$(".modal-wide").on("show.bs.modal", function() {
-  var height = $(window).height() - 200;
-  $(this).find(".modal-body").css("max-height", height);
-});*/
-
+let speedreader = 0
 //function readText(text) {
-function readText() {
-  text = "This is a demo of a speed reader. You are reading at 150 WPM. That's amazing! Do we have your attention now?"
+function startReader() {
+  if (currentArticle == "article-button-demo") {
+    text = "This is a demo of a speed reader. You are reading at 150 WPM. That's amazing! Do we have your attention now?"
+  } else {
+    idx = currentArticle.replace('article-button-','');
+    text = data.articles[idx].content;
+  }
   let words = text.split(" ");
   let numWords = words.length - 1;
   let index = 0
-  setInterval(function(){
+  speedreader = setInterval(function(){
     if (words[index] != null) {
-      $("#test_area").html("<h3>"+words[index]+"</h3>")
+      $("#test_area").html("<h3>"+words[index]+"</h3>");
       index+=1;
     }
   },500);
+}
+
+function closeReader() {
+  $("#test_area").html("<h3></h3>");
+  clearInterval(speedreader);
 }
