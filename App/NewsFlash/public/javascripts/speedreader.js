@@ -31,8 +31,8 @@ function getTrendingNews(callback) {
 function loadNewsArticles(articles) {
   console.log("total articles: " + articles.length);
   for (var i = 0; i < 8; i++) {
-    console.log(articles[i].description);
-    $("#article-"+i).html("<h3>"+articles[i].description+"</h3>");
+    console.log(articles[i].title);
+    $("#article-"+i).html("<h3>"+articles[i].title+"</h3>");
   }
 }
 
@@ -45,7 +45,7 @@ let speedreader = 0
 //function readText(text) {
 function startReader() {
   if (currentArticle == "article-button-demo") {
-    text = "This is a demo of a speed reader. You are reading at 150 WPM. That's amazing! Do we have your attention now?"
+    text = "This is a demo of a speed reader. You are reading at 120 WPM. That's amazing! Do we have your attention now?"
   } else {
     idx = currentArticle.replace('article-button-','');
     text = data.articles[idx].content;
