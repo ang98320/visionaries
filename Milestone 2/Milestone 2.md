@@ -3,7 +3,7 @@
 ### Alex Ng | Cruz Rico | Jiajun (Jim) Chen | Shane Gilbert
 
 1. milestone2.md is present in our repo
-2. Our idea is based on our idea present in the first milestone: a speed-reader designed for dyslexic readers to improve their reading efficiency. Please note that the prototypes in our milestone1 reflect a different idea which we are no longer pursuing.
+2. Our idea is based on our idea present in the first milestone: a speed-reader designed for dyslexic readers to improve their reading efficiency. Please note that the prototypes in our milestone 1 reflect a different idea which we are no longer pursuing.
 
 | ![screenshot0](/Milestone%202/ui0.png) |
 |:--:|
@@ -17,10 +17,10 @@
 |:--:|
 | *3c. This is our speed-reader which presents words one at a time* |
 
-4. As noted earlier, our screenshots are completely different from the prototypes in milestone1. This is because we changed our idea from an OCR reader to a speed-reader.
+4. As noted earlier, our screenshots are completely different from the prototypes in milestone 1. This is because we changed our idea from an OCR reader to a speed-reader to help dyslexic patients read. We feel more passionate about the speed-reader which fueled our desire to change
 5. Will demonstrate on localhost
 6. We call a news api which returns a list of trending articles in json format. We then load the json into our front-end. (We will explain this more to our TA)
-7. Yes: can navigate to all pages from home page
+7. Yes: can navigate to all pages from home page and back.
 8. See Above
 9. See Above
 10. See Above
