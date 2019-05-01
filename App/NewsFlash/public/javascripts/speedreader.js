@@ -2,6 +2,7 @@
 // a4a03d7d0df7480e8b52461a0e39fb77
 data = 0
 currentArticle = 0
+demo = 0  // will probably remove this later
 
 $(document).ready(function(){
   console.log("hello from speedreader.js");
@@ -36,6 +37,18 @@ function loadNewsArticles(articles) {
   }
 }
 
+function demoAjax() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     currentArticle = "article-button-demo";
+     demo = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/demo-speedreader", true);
+  xhttp.send();
+}
+
 function initReader(id) {
   console.log(id);
   currentArticle = id;
@@ -45,7 +58,7 @@ let speedreader = 0
 //function readText(text) {
 function startReader() {
   if (currentArticle == "article-button-demo") {
-    text = "This is a demo of a speed reader. You are reading at 150 WPM. That's amazing! Do we have your attention now?"
+    text = demo;
   } else {
     idx = currentArticle.replace('article-button-','');
     text = data.articles[idx].content;
