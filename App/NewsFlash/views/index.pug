@@ -21,6 +21,7 @@ block body
 	.container
 		- for (var i = 0; i < 8; i++)
 			.jumbotron(id="jumbotron-"+i)
+				img(src="https://icdn2.digitaltrends.com/image/news-apps-header-1500x1000.jpg" style="max-width: 200px;")
 				h1(id="article-"+i) ...
 				a.btn.btn-lg.btn-primary(id="article-button-"+i data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="initReader(this.id)") Read
 
