@@ -64,15 +64,20 @@ function startReader() {
     idx = currentArticle.replace('article-button-','');
     text = data.articles[idx].content;
   }
+  //if a speedreader interval is already open, close it and start a new one
+  if (speedreader)
+	closeReader();
+
   let words = text.split(" ");
   let numWords = words.length - 1;
   let index = 0
+  //Open a new interval with speed (ms) based on wpm input
   speedreader = setInterval(function(){
     if (words[index] != null) {
       $("#test_area").html("<h3>"+words[index]+"</h3>");
       index+=1;
     }
-  },500);
+  }, (1/(document.getElementById("wpm").value/60))*1000);
 }
 
 function closeReader() {

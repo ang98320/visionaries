@@ -36,7 +36,10 @@ block body
 						button(type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="closeReader()") &times;
 						//h4(class="modal-title") Title
 						button(type="button" onclick="startReader()" class="btn btn-primary") Start
-
+						br
+						label(for="wpm") Set words per minute:
+						input(id="wpm" type="number" value="" placeholder="WPM")
+						//button(type="button" onclick="setWPM()" class="btn btn-primary") Set
 					div(class="modal-body")
 
 					#test_area(style="text-align:center;")
