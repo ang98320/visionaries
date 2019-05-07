@@ -33,6 +33,7 @@ function loadNewsArticles(articles) {
   console.log("total articles: " + articles.length);
   for (var i = 0; i < 8; i++) {
     console.log(articles[i].description);
+    $("#article-pic-"+i).attr("src", articles[i].urlToImage);
     $("#article-"+i).html("<h3>"+articles[i].description+"</h3>");
   }
 }
