@@ -1,10 +1,15 @@
 extends ../node_modules/jade-bootstrap/_bootstrap
+
+
 append styles
 	// Custom styles for this template
-	//link(href='../css/navbar-static-top.css', rel='stylesheet')
+	//link(href='../css/navbar-static-top.css', rel='stylesheet')	
+	link(href='../public/stylesheets/style.css', rel='stylesheet', type='text/css')
 	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
 	script(src='/javascripts/speedreader.js')
+
 block body
+
 	// Static navbar
 	+navbar-static("NewsFlash","navbar")
 		+nav_item("/","active") Home
@@ -20,9 +25,9 @@ block body
 			//+nav_item("#") One more separated link
 	.container
 		- for (var i = 0; i < 8; i++)
-			.jumbotron(id="jumbotron-"+i)
-				img(id="article-pic-"+i src="" style="max-width: 200px;")
-				h1(id="article-"+i) ...
+			.jumbotron(id="jumbotron-"+i )
+				img(class="article-pic" id="article-pic-"+i src="" )
+				h1(class="description" id="article-"+i) ...
 				a.btn.btn-lg.btn-primary(id="article-button-"+i data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="initReader(this.id)") Read
 
 	.container
@@ -39,7 +44,6 @@ block body
 						br
 						label(for="wpm") Set words per minute:
 						input(id="wpm" type="number" value="" placeholder="WPM")
-						//button(type="button" onclick="setWPM()" class="btn btn-primary") Set
 					div(class="modal-body")
 
 					#test_area(style="text-align:center;")

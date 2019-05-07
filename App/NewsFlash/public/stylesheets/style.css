@@ -46,3 +46,14 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+/*Contents of article divs*/
+.article-pic {
+  display: flex;
+  position: absolute;
+
+  overflow: hidden;
+  opacity: .1;
+  filter: alpha(opacity=10);
+
+}
