@@ -71,7 +71,7 @@ function startReader() {
     text = data.articles[idx].content;
   }
 
-  if(!text)
+  if(text == null)
     text = "Article_Text_Not_Found!";
   //if a speedreader interval is already open, close it and start a new one
   if (speedreader)
