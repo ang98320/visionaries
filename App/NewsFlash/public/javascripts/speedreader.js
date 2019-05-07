@@ -33,7 +33,11 @@ function loadNewsArticles(articles) {
   console.log("total articles: " + articles.length);
   for (var i = 0; i < 8; i++) {
     console.log(articles[i].description);
-    $("#article-pic-"+i).attr("src", articles[i].urlToImage);
+    if($("#jumbotron-"+i != null))
+      $("#jumbotron-"+i).css("background-image", "url("+articles[i].urlToImage+")");
+    else
+      $("#jumbotron-"+i).css("background-image", "url(https://icdn2.digitaltrends.com/image/news-apps-header-1500x1000.jpg)");
+    $("#title-"+i).html("<h2>"+articles[i].title+"</h2>");
     $("#article-"+i).html("<h3>"+articles[i].description+"</h3>");
   }
 }
@@ -58,12 +62,17 @@ function initReader(id) {
 let speedreader = 0
 //function readText(text) {
 function startReader() {
+  let wpm = 500
   if (currentArticle == "article-button-demo") {
     text = demo;
   } else {
+    wpm = ((1/(document.getElementById("wpm").value/60))*1000);
     idx = currentArticle.replace('article-button-','');
     text = data.articles[idx].content;
   }
+
+  if(!text)
+    text = "Article_Text_Not_Found!";
   //if a speedreader interval is already open, close it and start a new one
   if (speedreader)
 	closeReader();
@@ -74,10 +83,10 @@ function startReader() {
   //Open a new interval with speed (ms) based on wpm input
   speedreader = setInterval(function(){
     if (words[index] != null) {
-      $("#test_area").html("<h3>"+words[index]+"</h3>");
+      $("#test_area").html("<h4>"+words[index]+"</h4>");
       index+=1;
     }
-  }, (1/(document.getElementById("wpm").value/60))*1000);
+  }, wpm);
 }
 
 function closeReader() {

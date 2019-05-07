@@ -4,7 +4,7 @@ extends ../node_modules/jade-bootstrap/_bootstrap
 append styles
 	// Custom styles for this template
 	//link(href='../css/navbar-static-top.css', rel='stylesheet')	
-	link(href='../public/stylesheets/style.css', rel='stylesheet', type='text/css')
+	link(href='stylesheets/style.css', rel='stylesheet', type='text/css')
 	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
 	script(src='/javascripts/speedreader.js')
 
@@ -25,10 +25,12 @@ block body
 			//+nav_item("#") One more separated link
 	.container
 		- for (var i = 0; i < 8; i++)
-			.jumbotron(id="jumbotron-"+i )
-				img(class="article-pic" id="article-pic-"+i src="" )
-				h1(class="description" id="article-"+i) ...
-				a.btn.btn-lg.btn-primary(id="article-button-"+i data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="initReader(this.id)") Read
+			.jumbotron(id="jumbotron-"+i, background-image="")
+				ul
+					a.btn.btn-lg.btn-primary(id="article-button-"+i, data-toggle="modal", href="#normalModal", class="btn btn-default", onclick="initReader(this.id)") Read
+					h2(class="title" id="title-"+i) ...
+					div(class="line")
+					h1(class="description" id="article-"+i) ...
 
 	.container
 		.row
@@ -46,7 +48,7 @@ block body
 						input(id="wpm" type="number" value="" placeholder="WPM")
 					div(class="modal-body")
 
-					#test_area(style="text-align:center;")
+						#test_area(class="words" style="text-align:center;")
 
 					div(class="modal-footer")
 						//button(type="button" onclick="startReader()" class="btn btn-primary") Start

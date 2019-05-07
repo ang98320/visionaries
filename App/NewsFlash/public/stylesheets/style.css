@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -8,7 +8,7 @@ a {
 }
 
 /* The Modal (background) */
-.modal {
+.modal1 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -24,12 +24,19 @@ a {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-content1 {
   background-color: #fefefe;
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  z-index: 2;
+}
+
+
+.words {
+  color: black;
+  size: 24pt;
 }
 
 /* The Close Button */
@@ -48,12 +55,31 @@ a {
 }
 
 /*Contents of article divs*/
-.article-pic {
+.jumbotron {
   display: flex;
-  position: absolute;
-
   overflow: hidden;
-  opacity: .1;
-  filter: alpha(opacity=10);
+  background-repeat: no-repeat;
+  background-size:100%;
+}
 
+.line {
+  background-color: white;
+  border: 1px;
+  border-style: solid;
+  border-color: black;
+  height: 3px;
+  width: inherit;
+}
+
+h2,h3 {
+  font-weight: bold;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+h4 {
+  color: black;
+  font-size: 24pt;
 }
