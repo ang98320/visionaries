@@ -70,7 +70,7 @@ function initReader(id) {
 let speedreader = 0
 //function readText(text) {
 function startReader() {
-  let wpm = 500
+  let wpm = 120
   if (currentArticle == "article-button-demo") {
     text = demo;
   } else {
@@ -87,7 +87,12 @@ function startReader() {
 
   let words = text.split(" ");
   let numWords = words.length - 1;
-  let index = 0
+  let index = 0;
+  
+  if(wpm == "Infinity" || wpm == "")
+    wpm = 120;
+  console.log(wpm);
+
   //Open a new interval with speed (ms) based on wpm input
   speedreader = setInterval(function(){
     if (words[index] != null) {
