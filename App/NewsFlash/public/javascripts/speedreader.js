@@ -33,12 +33,20 @@ function loadNewsArticles(articles) {
   console.log("total articles: " + articles.length);
   for (var i = 0; i < 8; i++) {
     console.log(articles[i].description);
+    //check if a picture came with the article
     if($("#jumbotron-"+i != null))
       $("#jumbotron-"+i).css("background-image", "url("+articles[i].urlToImage+")");
     else
       $("#jumbotron-"+i).css("background-image", "url(https://icdn2.digitaltrends.com/image/news-apps-header-1500x1000.jpg)");
-    $("#title-"+i).html("<h2>"+articles[i].title+"</h2>");
-    $("#article-"+i).html("<h3>"+articles[i].description+"</h3>");
+    $("#title-"+i).html("<h1>"+articles[i].title+"</h1>");
+    $("#article-"+i).html("<h2>"+articles[i].description+"</h2>");
+    loadTimeToRead();
+  }
+}
+
+function loadTimeToRead() {
+  for (var i = 0; i < 8; i++) {
+    $("#footer-"+i).html("<p>"+calcTimeToRead(data.articles[i])+"</p>");
   }
 }
 
@@ -92,4 +100,21 @@ function startReader() {
 function closeReader() {
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
+}
+
+function calcTimeToRead(article) {
+  if(article.content)
+    words = article.content.split(" ");
+  else
+    return "No content in this article...";
+  let numWords = words.length - 1;
+  let wpm = document.getElementById("wpm").value;
+
+  //If wpm hasn't been set yet it defaults to "Infinity" for some reason
+  console.log(wpm);
+  if(wpm == "Infinity" || wpm == "")
+    wpm = 120;
+  const readTime = (numWords/wpm).toFixed(2);
+  return (readTime + " minutes to read at "+wpm+" words per minute.");
+  
 }

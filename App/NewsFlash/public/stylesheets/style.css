@@ -62,6 +62,14 @@ a {
   background-size:100%;
 }
 
+.sharebtn {
+  margin-left: 10px;
+  height: 45px;
+  width: 45px;
+  transform: rotate(180deg);
+  filter: invert(1);
+}
+
 .line {
   background-color: white;
   border: 1px;
@@ -71,8 +79,17 @@ a {
   width: inherit;
 }
 
-h2,h3 {
-  font-weight: bold;
+h1 {
+  font-size:24pt !important;
+  font-weight: 700;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+h2 {
+  font-size:18pt;
   color: black;
   -webkit-text-fill-color: white;
   -webkit-text-stroke-width: 1px;
@@ -83,3 +100,18 @@ h4 {
   color: black;
   font-size: 24pt;
 }
+
+p {
+  padding-top:5px;
+  font-size: 12pt;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.articleItems {
+  background-color: rgba(0,0,0,.3);
+  padding:5px;
+  border-radius: 5px;
+}
+
