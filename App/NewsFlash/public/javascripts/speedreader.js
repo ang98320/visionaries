@@ -3,6 +3,7 @@
 data = 0
 currentArticle = 0
 demo = 0  // will probably remove this later
+let wpm = 500;
 
 $(document).ready(function(){
   console.log("hello from speedreader.js");
@@ -70,7 +71,6 @@ function initReader(id) {
 let speedreader = 0
 //function readText(text) {
 function startReader() {
-  let wpm = 120
   if (currentArticle == "article-button-demo") {
     text = demo;
   } else {
@@ -90,8 +90,7 @@ function startReader() {
   let index = 0;
   
   if(wpm == "Infinity" || wpm == "")
-    wpm = 120;
-  console.log(wpm);
+    wpm = 500;
 
   //Open a new interval with speed (ms) based on wpm input
   speedreader = setInterval(function(){
