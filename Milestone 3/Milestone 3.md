@@ -16,10 +16,10 @@
 3. For milestone 3, we added an input box to allow users to adjust the speed at which the speedreader will display words.
 We have also added a background, title, description, and time to read for each article.
 4. Will be done during grading session.
-5. We chose the Google News API to gather news articles to fill our home page and Firebase to..........
+5. We chose the Google News API to fill our home page with news articles.
 6. Will be done during grading session.
 7. Our API calls are relevant since we are a speed reader based on using news articles.
 8. Our project pulls all of our news articles from Google's API which we can show during our grading session.
 9. Will be done during grading session.
 10. Will be done during grading session.
-11. 
+11. Current plan is to include a search function to search articles and a save function via Firebase to allow users to save articles they liked.
