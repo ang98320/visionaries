@@ -1,5 +1,8 @@
 // Google News API Key
 // a4a03d7d0df7480e8b52461a0e39fb77
+// Firebase API AIzaSyDYKhmDPqTGt1y52M1MI9VVnC0T6zXJML8
+
+//uncaught exception: [DEFAULT]: Firebase: No Firebase App '[DEFAULT]' has been created - call Firebase App.initializeApp() (app/no-app).
 data = 0
 currentArticle = 0
 demo = 0  // will probably remove this later
@@ -8,13 +11,15 @@ let wpm = 500;
 $(document).ready(function(){
   console.log("hello from speedreader.js");
   const database = firebase.database();
+  database.initalizeApp();
   let date = "" + getFullYear();
   date = date + "-" + getMonth();
   date = date + "-" + getDate();
+  let storage = "daily-articles/" + date;
   getTrendingNews(function() {
     console.log("done");
     console.log(data.articles);
-    database.ref(date).set(data.articles);
+    //database.ref(storage).set(data.articles);
     loadNewsArticles(data.articles);
   });
 });
