@@ -3,12 +3,26 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var firebase = require('firebase/app')
 
 var indexRouter = require('./routes/index');
 var demoRouter = require('./routes/demo');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+let firebaseConfig = {
+		    apiKey: "AIzaSyDYKhmDPqTGt1y52M1MI9VVnC0T6zXJML8",
+		    authDomain: "speedreader-d2816.firebaseapp.com",
+		    databaseURL: "https://speedreader-d2816.firebaseio.com",
+		    projectId: "speedreader-d2816",
+		    storageBucket: "speedreader-d2816.appspot.com",
+		    messagingSenderId: "583849395371",
+		    appId: "1:583849395371:web:8807a2373c849f56"};
+
+firebase.initializeApp(firebaseConfig);
+
+//let defaultStorage = firebase.database();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

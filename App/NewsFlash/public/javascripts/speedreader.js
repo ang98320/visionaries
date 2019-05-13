@@ -10,11 +10,12 @@ let wpm = 500;
 
 $(document).ready(function(){
   console.log("hello from speedreader.js");
-  const database = firebase.database();
-  database.initalizeApp();
-  let date = "" + getFullYear();
-  date = date + "-" + getMonth();
-  date = date + "-" + getDate();
+  //const database = firebase.database();
+  //database.initalizeApp();
+  let dateGetter = new Date();
+  let date = "" + dateGetter.getFullYear();
+  date = date + "-" + dateGetter.getMonth();
+  date = date + "-" + dateGetter. getDate();
   let storage = "daily-articles/" + date;
   getTrendingNews(function() {
     console.log("done");
