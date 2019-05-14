@@ -3,16 +3,16 @@ extends ../node_modules/jade-bootstrap/_bootstrap
 
 append styles
 	// Custom styles for this template
-	//link(href='../css/navbar-static-top.css', rel='stylesheet')	
+	//link(href='../css/navbar-static-top.css', rel='stylesheet')
 	link(href='stylesheets/style.css', rel='stylesheet', type='text/css')
-	
+
 	//script loading
 	script(src="/__/firebase/6.0.1/firebase-app.js")
 	script(src="/__/firebase/6.0.1/firebase-firestore.js")
 	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
 	script(src='/javascripts/speedreader.js')
 	//load up firebase script
-	
+
 	script(src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js")
 
 	script().
@@ -40,14 +40,14 @@ block body
 			//+nav_item("#") Something else here
 			//+nav_divider
 			//+nav_item("#") Separated link
-			//+nav_item("#") One more separated link 
+			//+nav_item("#") One more separated link
 	.container
-		label(class="wordpm" for="wpm") Set words per minute: 
+		label(class="wordpm" for="wpm") Set words per minute:
 		input(id="wpm" class="wpmInput" type="number" value="" placeholder="WPM"
 		onchange="loadTimeToRead()")
 		- for (var i = 0; i < 8; i++)
 			.jumbotron(id="jumbotron-"+i, background-image="" style="padding:20px;")
-				ul(class="articleItems" style="list-style: none")
+				ul(class="articleItems" style="list-style: none; background-color:black; opacity:0.85; padding:20px;")
 					h1(class="title" id="title-"+i) ...
 					div(class="line")
 					h2(class="description" id="article-"+i) ...
@@ -69,7 +69,7 @@ block body
 						//h4(class="modal-title") Title
 						button(type="button" onclick="startReader()" class="btn btn-primary") Start
 						br
-						
+
 					div(class="modal-body")
 
 						#test_area(class="words" style="text-align:center;")
