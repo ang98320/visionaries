@@ -63,6 +63,18 @@ function loadTimeToRead() {
   }
 }
 
+// format article before calling this function
+function saveArticle(article) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+    }
+  };
+  xhttp.open("POST", "/save-article", true);
+  xhttp.send(article);
+}
+
 function demoSave() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {

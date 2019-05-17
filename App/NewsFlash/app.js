@@ -9,6 +9,7 @@ var serviceAccount = require('./speedreader-d2816-83788023e819');
 
 var indexRouter = require('./routes/index');
 var demoRouter = require('./routes/demo');
+var savedRouter = require('./routes/saved');
 var usersRouter = require('./routes/users');
 
 let firebaseConfig = {
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/demo', demoRouter);
+app.use('/saved', savedRouter);
 
 app.get('/demo-save', function(req, res, next) {
 	var data = {
@@ -54,6 +56,14 @@ app.get('/demo-save', function(req, res, next) {
 
 app.get('/demo-speedreader', function(req, res, next) {
   res.send("This is a demo of a speed reader. You are reading at 120 WPM! That's amazing! Do we have your attention now!?");
+});
+
+app.post('/save-article', function(req, res, next) {
+	res.send("not implemented yet");
+});
+
+app.post('/remove-article', function(req, res, next) {
+	res.send("not implemented yet");
 });
 
 // catch 404 and forward to error handler

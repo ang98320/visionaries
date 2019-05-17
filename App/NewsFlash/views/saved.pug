@@ -1,0 +1,84 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+
+
+append styles
+	// Custom styles for this template
+	//link(href='../css/navbar-static-top.css', rel='stylesheet')
+	link(href='stylesheets/style.css', rel='stylesheet', type='text/css')
+
+	//script loading
+	//script(src="/__/firebase/6.0.1/firebase-app.js")
+	//script(src="/__/firebase/6.0.1/firebase-firestore.js")
+	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
+	script(src='/javascripts/speedreader.js')
+	//load up firebase script
+
+	//script(src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js")
+
+	//script().
+	//	var firebaseConfig = {
+	//	    apiKey: "AIzaSyDYKhmDPqTGt1y52M1MI9VVnC0T6zXJML8",
+	//	    authDomain: "speedreader-d2816.firebaseapp.com",
+	//	    databaseURL: "https://speedreader-d2816.firebaseio.com",
+	//	    projectId: "speedreader-d2816",
+	//	    storageBucket: "speedreader-d2816.appspot.com",
+	//	    messagingSenderId: "583849395371",
+	//	    appId: "1:583849395371:web:8807a2373c849f56"}
+	//	firebase.initializeApp(firebaseConfig)
+
+block body
+
+	// Static navbar
+	+navbar-static("NewsFlash","navbar")
+		+nav_item("/") Home
+		+nav_item("demo") Demo
+		+nav_item("/saved", active) Saved
+		//+nav_item("#") Profile
+		//+nav_item_dropdown("#")(label="150 WPM")
+			//+nav_item("#") Action
+			//+nav_item("#") Another action
+			//+nav_item("#") Something else here
+			//+nav_divider
+			//+nav_item("#") Separated link
+			//+nav_item("#") One more separated link
+	.container
+		label(class="wordpm" for="wpm") Set words per minute:
+		input(id="wpm" class="wpmInput" type="number" value="" placeholder="WPM"
+		onchange="loadTimeToRead()")
+		- for (var i = 0; i < 8; i++)
+			.jumbotron(id="jumbotron-"+i, background-image="" style="padding:20px;")
+				ul(class="articleItems" style="list-style: none; background-color:black; opacity:0.85; padding:20px;")
+					h1(class="title" id="title-"+i) ...
+					div(class="line")
+					h2(class="description" id="article-"+i) ...
+					div(class="line")
+					p(class="footer" id="footer-"+i) ...
+					li
+						a.btn.btn-lg.btn-primary(id="article-button-"+i, data-toggle="modal", href="#normalModal", class="btn btn-default", onclick="initReader(this.id)") Read
+						img.btn.btn-primary(id="share-button-"+i, class="sharebtn", onclick="share(this.id)" src="images/share.svg")
+
+	.container
+		.row
+			.col-md-12
+
+		#normalModal(class="modal fade")
+			div(class="modal-dialog")
+				div(class="modal-content")
+					div(class="modal-header")
+						button(type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="closeReader()") &times;
+						//h4(class="modal-title") Title
+						button(type="button" onclick="startReader()" class="btn btn-primary") Start
+						br
+
+					div(class="modal-body")
+
+						#test_area(class="words" style="text-align:center;")
+
+					div(class="modal-footer")
+						//button(type="button" onclick="startReader()" class="btn btn-primary") Start
+
+					//#test_area(style="text-align:center;")
+						#test_main
+
+		//thanks to https://codepen.io/DawsonMediaD/pen/byDqv
+		//https://codepen.io/tanyagupta/pen/XXRybL
