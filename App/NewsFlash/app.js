@@ -3,13 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var firebase = require('firebase/app')
+var admin = require('firebase-admin');
+var firebase = require('firebase/app');
+var serviceAccount = require('./speedreader-d2816-83788023e819');
 
 var indexRouter = require('./routes/index');
 var demoRouter = require('./routes/demo');
 var usersRouter = require('./routes/users');
-
-var app = express();
 
 let firebaseConfig = {
 		    apiKey: "AIzaSyDYKhmDPqTGt1y52M1MI9VVnC0T6zXJML8",
@@ -18,9 +18,14 @@ let firebaseConfig = {
 		    projectId: "speedreader-d2816",
 		    storageBucket: "speedreader-d2816.appspot.com",
 		    messagingSenderId: "583849395371",
-		    appId: "1:583849395371:web:8807a2373c849f56"};
+		    appId: "1:583849395371:web:8807a2373c849f56"
+};
+admin.initializeApp({
+	credential: admin.credential.cert(serviceAccount),
+	databaseURL: "https://speedreader-d2816.firebaseio.com"
+});
 
-firebase.initializeApp(firebaseConfig);
+var app = express();
 
 //let defaultStorage = firebase.database();
 
@@ -37,6 +42,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/demo', demoRouter);
+
+app.get('/demo-save', function(req, res, next) {
+	var data = {
+		name: "jim",
+		email: "jjc"
+	};
+	var setDoc = admin.firestore().collection('users').doc('node_test').set(data);
+	res.send("success");
+});
 
 app.get('/demo-speedreader', function(req, res, next) {
   res.send("This is a demo of a speed reader. You are reading at 120 WPM! That's amazing! Do we have your attention now!?");

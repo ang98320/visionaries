@@ -12,11 +12,11 @@ $(document).ready(function(){
   console.log("hello from speedreader.js");
   //const database = firebase.database();
   //database.initalizeApp();
-  let dateGetter = new Date();
-  let date = "" + dateGetter.getFullYear();
-  date = date + "-" + dateGetter.getMonth();
-  date = date + "-" + dateGetter. getDate();
-  let storage = "daily-articles/" + date;
+  //let dateGetter = new Date();
+  //let date = "" + dateGetter.getFullYear();
+  //date = date + "-" + dateGetter.getMonth();
+  //date = date + "-" + dateGetter. getDate();
+  //let storage = "daily-articles/" + date;
   getTrendingNews(function() {
     console.log("done");
     console.log(data.articles);
@@ -63,6 +63,17 @@ function loadTimeToRead() {
   }
 }
 
+function demoSave() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+    }
+  };
+  xhttp.open("GET", "/demo-save", true);
+  xhttp.send();
+}
+
 function demoAjax() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -100,7 +111,7 @@ function startReader() {
   let words = text.split(" ");
   let numWords = words.length - 1;
   let index = 0;
-  
+
   if(wpm == "Infinity" || wpm == "")
     wpm = 500;
 
@@ -132,5 +143,5 @@ function calcTimeToRead(article) {
     wpm = 120;
   const readTime = (numWords/wpm).toFixed(2);
   return (readTime + " minutes to read at "+wpm+" words per minute.");
-  
+
 }
