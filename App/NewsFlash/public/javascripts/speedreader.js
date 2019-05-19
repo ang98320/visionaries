@@ -53,7 +53,7 @@ function loadNewsArticles(articles) {
       $("#jumbotron-"+i).css("background-image", "url(https://icdn2.digitaltrends.com/image/news-apps-header-1500x1000.jpg)");
     $("#title-"+i).html("<h1>"+articles[i].title+"</h1>");
     $("#article-"+i).html("<h2>"+articles[i].description+"</h2>");
-    loadTimeToRead();111
+    loadTimeToRead();
   }
 }
 
@@ -155,5 +155,21 @@ function calcTimeToRead(article) {
     wpm = 120;
   const readTime = (numWords/wpm).toFixed(2);
   return (readTime + " minutes to read at "+wpm+" words per minute.");
+
+}
+
+function save(id) {
+  	
+  if(document.getElementById(id).src.includes("empty.png")) {
+    document.getElementById(id).src = "images/save_icon_fill.png";
+    $("#"+id).after('<p id="success">Added article to Saved!</p>');
+    $("#success").delay(2000).fadeOut();
+    //Add article to save db
+  } else {
+    document.getElementById(id).src = "images/save_icon_empty.png";
+    $("#"+id).after('<p id="success">Removed article from Saved!</p>');
+    $("#success").delay(2000).fadeOut();
+    //Remove saved article from db
+  }
 
 }

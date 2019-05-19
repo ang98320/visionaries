@@ -55,7 +55,8 @@ block body
 					p(class="footer" id="footer-"+i) ...
 					li
 						a.btn.btn-lg.btn-primary(id="article-button-"+i, data-toggle="modal", href="#normalModal", class="btn btn-default", onclick="initReader(this.id)") Read
-						img.btn.btn-primary(id="share-button-"+i, class="sharebtn", onclick="share(this.id)" src="images/share.svg")
+						//img.btn.btn-primary(id="share-button-"+i, class="sharebtn", onclick="share(this.id)" src="images/share.svg")
+						img.btn.btn-primary(id="save-button"+i, class="savebtn", onclick="save(this.id)" src="images/save_icon_empty.png")
 
 	.container
 		.row

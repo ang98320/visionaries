@@ -70,6 +70,20 @@ a {
   filter: invert(1);
 }
 
+.savebtn {
+  margin-left: 10px;
+  padding-left:6px;
+  padding-right:6px;
+  height: 45px;
+  width: 45px;
+  
+}
+
+#success {
+  position: relative; 
+  margin: 0px;
+}
+
 .line {
   background-color: white;
   border: 1px;
@@ -127,3 +141,5 @@ p {
   padding: 2px;
   border: 2px solid #808080;
 }
+
+
