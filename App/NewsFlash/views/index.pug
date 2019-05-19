@@ -43,7 +43,7 @@ block body
 			//+nav_item("#") One more separated link
 	.container
 		label(class="wordpm" for="wpm") Set words per minute:
-		input(id="wpm" class="wpmInput" type="number" value="" placeholder="WPM"
+		input(id="wpm" class="wpmInput" type="number" min="0" value="" placeholder="WPM"
 		onchange="loadTimeToRead()")
 		- for (var i = 0; i < 8; i++)
 			.jumbotron(id="jumbotron-"+i, background-image="" style="padding:20px;")
