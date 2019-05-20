@@ -10,6 +10,7 @@ append styles
 	//script(src="/__/firebase/6.0.1/firebase-app.js")
 	//script(src="/__/firebase/6.0.1/firebase-firestore.js")
 	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
+	script(src='/javascripts/speedreader.js')
 	script(src='/javascripts/savedarticle.js')
 	//load up firebase script
 
@@ -45,18 +46,18 @@ block body
 		label(class="wordpm" for="wpm") Set words per minute:
 		input(id="wpm" class="wpmInput" type="number" value="" placeholder="WPM"
 		onchange="loadTimeToRead()")
-		//- for (var i = 0; i < 8; i++)
-		//	.jumbotron(id="jumbotron-"+i, background-image="" style="padding:20px;")
-		//		ul(class="articleItems" style="list-style: none; background-color:black; opacity:0.85; padding:20px;")
-		//			h1(class="title" id="title-"+i) ...
-		//			div(class="line")
-		//			h2(class="description" id="article-"+i) ...
-		//			div(class="line")
-		//			p(class="footer" id="footer-"+i) ...
-		//			li
-		//				a.btn.btn-lg.btn-primary(id="article-button-"+i, data-toggle="modal", href="#normalModal", class="btn btn-default", onclick="initReader(this.id)") Read
-		//				img.btn.btn-primary(id="share-button-"+i, class="sharebtn", onclick="share(this.id)" src="images/share.svg")
-		//				img.btn.btn-primary(id="save-button"+i, class="savebtn", onclick="save(this.id)" src="images/save_icon_fill.png")
+		- for (var i = 0; i < 8; i++)
+			.jumbotron(id="jumbotron-"+i, background-image="" style="padding:20px;")
+				ul(class="articleItems" style="list-style: none; background-color:black; opacity:0.85; padding:20px;")
+					h1(class="title" id="title-"+i) ...
+					div(class="line")
+					h2(class="description" id="article-"+i) ...
+					div(class="line")
+					p(class="footer" id="footer-"+i) ...
+					li
+						a.btn.btn-lg.btn-primary(id="article-button-"+i, data-toggle="modal", href="#normalModal", class="btn btn-default", onclick="initReader(this.id)") Read
+	//					img.btn.btn-primary(id="share-button-"+i, class="sharebtn", onclick="share(this.id)" src="images/share.svg")
+						img.btn.btn-primary(id="save-button"+i, class="savebtn", onclick="save(this.id)" src="images/save_icon_fill.png")
 
 	.container
 		.row

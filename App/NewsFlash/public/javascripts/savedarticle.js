@@ -6,7 +6,7 @@
 data = 0
 currentArticle = 0
 demo = 0  // will probably remove this later
-let wpm = 500;
+//let wpm = 500; (already declared in speedreader.js)
 
 $(document).ready(function(){
   console.log("hello from savedarticle.js");
@@ -38,13 +38,17 @@ function removeArticle() {
 }
 
 function updateUI(articles) {
-  for (var i = 0; i < articles.length; i ++) {
+  
+  loadNewsArticles(articles);	
+  /*for (var i = 0; i < articles.length; i ++) {
     console.log(articles[i]);
     var jumbotron = createArticleJumbotron(articles[i], i);
     var html = document.getElementById("saved-content").appendChild(jumbotron);
-  }
+    
+  }*/
 }
 
+/*
 function createArticleJumbotron(article, i) {
   var ul = document.createElement("ul")
   ul.className = "articleItems";
@@ -79,3 +83,4 @@ function createArticleJumbotron(article, i) {
   jumbotron.append(ul);
   return jumbotron;
 }
+*/
