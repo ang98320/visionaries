@@ -25,6 +25,18 @@ function getSavedArticles() {
   xhttp.send();
 }
 
+function removeArticle() {
+  //go up 3 levels to div parent class, pull index, remove this index from firebase
+  // parent levels should go from button .> li -> ul -> div
+  let index = $(this).parent().parent().parent().id;
+  index = index.splt("-").pop();
+  
+
+  //figure out how to readjust every other jumbotron in the case that user would lke to remove
+  //multiple articles.
+
+}
+
 function updateUI(articles) {
   for (var i = 0; i < articles.length; i ++) {
     console.log(articles[i]);
