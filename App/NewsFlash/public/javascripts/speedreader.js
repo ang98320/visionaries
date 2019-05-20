@@ -4,6 +4,7 @@
 
 //uncaught exception: [DEFAULT]: Firebase: No Firebase App '[DEFAULT]' has been created - call Firebase App.initializeApp() (app/no-app).
 data = 0
+articles = 0
 currentArticle = 0
 demo = 0  // will probably remove this later
 let wpm = 500;
@@ -37,6 +38,8 @@ function getTrendingNews(callback) {
       })
       .then(function(json) {
         data = json
+	//use variable articles from here on to access articles, as savedarticle.js doesn't need to use the data variable in its context
+	articles = data.articles
         callback();
       })
 }
@@ -59,7 +62,7 @@ function loadNewsArticles(articles) {
 
 function loadTimeToRead() {
   for (var i = 0; i < 8; i++) {
-    $("#footer-"+i).html("<p>"+calcTimeToRead(data.articles[i])+"</p>");
+    $("#footer-"+i).html("<p>"+calcTimeToRead(articles[i])+"</p>");
   }
 }
 
@@ -177,8 +180,9 @@ function save(id) {
     document.getElementById(id).src = "images/save_icon_fill.png";
     $("#"+id).after('<p id="success">Added article to Saved!</p>');
     $("#success").delay(2000).fadeOut();
-    saveArticle(article);
+    
     //Add article to save db
+    saveArticle(article);
   } else {
     document.getElementById(id).src = "images/save_icon_empty.png";
     $("#"+id).after('<p id="success">Removed article from Saved!</p>');
