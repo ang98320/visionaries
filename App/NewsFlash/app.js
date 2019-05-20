@@ -6,6 +6,7 @@ var logger = require('morgan');
 var admin = require('firebase-admin');
 var firebase = require('firebase/app');
 var serviceAccount = require('./speedreader-d2816-83788023e819');
+var bodyParser = require("body-parser");
 
 var indexRouter = require('./routes/index');
 var demoRouter = require('./routes/demo');
@@ -37,6 +38,7 @@ app.set('view engine', 'pug');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -58,8 +60,24 @@ app.get('/demo-speedreader', function(req, res, next) {
   res.send("This is a demo of a speed reader. You are reading at 120 WPM! That's amazing! Do we have your attention now!?");
 });
 
-app.post('/save-article', function(req, res, next) {
+// load saved articles from firebase
+app.get('/get-articles', function(req, res, next) {
 	res.send("not implemented yet");
+});
+
+app.post('/save-article', function(req, res, next) {
+	article = {
+    "author": req.body.author,
+    "content": req.body.content,
+    "description": req.body.description,
+    "publishedAt": req.body.publishedAt,
+    "title": req.body.title,
+    "url": req.body.url,
+    "urlToImage": req.body.urlToImage
+  };
+	console.log(article);
+	//var setDoc = admin.firestore().collection('saved-articles').doc('node_test').set(article);
+	res.send("save-article success");
 });
 
 app.post('/remove-article', function(req, res, next) {

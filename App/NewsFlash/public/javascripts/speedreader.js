@@ -63,16 +63,20 @@ function loadTimeToRead() {
   }
 }
 
-// format article before calling this function
+function loadSavedArticles() {
+  console.log("not implemented");
+}
+
 function saveArticle(article) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
-    }
-  };
-  xhttp.open("POST", "/save-article", true);
-  xhttp.send(article);
+  $.ajax({
+    url: "/save-article",
+    type: 'POST',
+    data: JSON.stringify(article),
+    processData: false,
+    contentType: 'application/json'
+  }).success(function (data) {
+    console.log(data);
+  });
 }
 
 function demoSave() {
@@ -159,11 +163,25 @@ function calcTimeToRead(article) {
 }
 
 function save(id) {
-  	
+  idx = id.replace('save-button','');
+  article = {
+    "author": data.articles[idx].author,
+    "content": data.articles[idx].content,
+    "description": data.articles[idx].description,
+    "publishedAt": data.articles[idx].publishedAt,
+    "title": data.articles[idx].title,
+    "url": data.articles[idx].url,
+    "urlToImage": data.articles[idx].urlToImage
+  };
+  //article = data.articles[idx];
+  //console.log("idx,", idx);
+  //console.log("save:", article);
+
   if(document.getElementById(id).src.includes("empty.png")) {
     document.getElementById(id).src = "images/save_icon_fill.png";
     $("#"+id).after('<p id="success">Added article to Saved!</p>');
     $("#success").delay(2000).fadeOut();
+    saveArticle(article);
     //Add article to save db
   } else {
     document.getElementById(id).src = "images/save_icon_empty.png";
