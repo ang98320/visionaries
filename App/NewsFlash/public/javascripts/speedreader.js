@@ -63,10 +63,6 @@ function loadTimeToRead() {
   }
 }
 
-function loadSavedArticles() {
-  console.log("not implemented");
-}
-
 function saveArticle(article) {
   $.ajax({
     url: "/save-article",

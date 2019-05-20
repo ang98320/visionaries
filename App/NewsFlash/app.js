@@ -62,7 +62,12 @@ app.get('/demo-speedreader', function(req, res, next) {
 
 // load saved articles from firebase
 app.get('/get-articles', function(req, res, next) {
-	res.send("not implemented yet");
+  var dbRef = admin.firestore().collection('saved-articles');
+	var getDoc = dbRef.get().then(snap => {
+		snap.forEach(doc => {
+			console.log(doc.data());
+		});
+	});
 });
 
 app.post('/save-article', function(req, res, next) {
@@ -76,7 +81,7 @@ app.post('/save-article', function(req, res, next) {
     "urlToImage": req.body.urlToImage
   };
 	console.log(article);
-	//var setDoc = admin.firestore().collection('saved-articles').doc('node_test').set(article);
+	var setDoc = admin.firestore().collection('saved-articles').doc().set(article);
 	res.send("save-article success");
 });
 
