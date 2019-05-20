@@ -62,11 +62,17 @@ app.get('/demo-speedreader', function(req, res, next) {
 
 // load saved articles from firebase
 app.get('/get-articles', function(req, res, next) {
+	var articles = [];
   var dbRef = admin.firestore().collection('saved-articles');
 	var getDoc = dbRef.get().then(snap => {
 		snap.forEach(doc => {
 			console.log(doc.data());
+			articles.push(doc.data());
 		});
+	}).then(() => {
+		res.send(articles);
+	}).catch(() => {
+		console.log("get-articles err");
 	});
 });
 

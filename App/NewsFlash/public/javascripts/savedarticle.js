@@ -17,9 +17,53 @@ function getSavedArticles() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-     console.log(this.responseText);
+     //console.log(this.responseText);
+     updateUI(JSON.parse(this.responseText));
     }
   };
   xhttp.open("GET", "/get-articles", true);
   xhttp.send();
+}
+
+function updateUI(articles) {
+  for (var i = 0; i < articles.length; i ++) {
+    console.log(articles[i]);
+    var jumbotron = createArticleJumbotron(articles[i], i);
+    var html = document.getElementById("saved-content").appendChild(jumbotron);
+  }
+}
+
+function createArticleJumbotron(article, i) {
+  var ul = document.createElement("ul")
+  ul.className = "articleItems";
+
+  var title = document.createElement("h1")
+  title.innerHTML = article.title;
+  var div1 = document.createElement("div")
+  var desc = document.createElement("h2")
+  desc.innerHTML = article.description;
+  var div2 = document.createElement("div")
+  var footer = document.createElement("p")
+  var list = document.createElement("li")
+  var read = document.createElement("a.btn.btn-lg.btn-primary")
+  read.className = "btn btn-default";
+  read.innerHTML = "Read"
+
+  //var save = document.createElement("img.btn.btn-primary");
+
+  list.append(read);
+
+  ul.append(title);
+  ul.append(div1);
+  ul.append(desc);
+  ul.append(div2);
+  ul.append(footer);
+  ul.append(list);
+
+  var jumbotron = document.createElement("div");
+  jumbotron.id = "jumbotron-"+i
+  jumbotron.style.backgroundImage = "url("+article.urlToImage+")";
+  jumbotron.className = "jumbotron";
+  jumbotron.append(ul);
+  return jumbotron;
 }
