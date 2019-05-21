@@ -14,8 +14,8 @@
 | *Save Page displays article as well. Some actions are yet to be implemented such as remove saved article button* |
 
 3. For milestone 4, we made each article more readable by adding a black background between the text and background image. We have also made the text bolder for readability. The default WPM is now also visible.
-4. - (1) Users can speed-read articles using the Read button
-  - (2) Users can save articles for later using the Star button
+4.  * (1) Users can speed-read articles using the Read button
+    * (2) Users can save articles for later using the Star button
 5. Click the Read button to demo the speed-reader
 6. Our app is intended to improve reading efficiency of users with dyslexia. Speed-reading is a proven method to accomplish this.
 7. The code for the speed-reader can be found in speedreader.js
