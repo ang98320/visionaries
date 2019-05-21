@@ -60,6 +60,12 @@ app.get('/demo-speedreader', function(req, res, next) {
   res.send("This is a demo of a speed reader. You are reading at 120 WPM! That's amazing! Do we have your attention now!?");
 });
 
+// use this to check if article in home is saved
+// if so, use this to star the saved articles in home
+app.get('/check-if-article-saved', function(req, res, next) {
+	res.send("not implemented")
+});
+
 // load saved articles from firebase
 app.get('/get-articles', function(req, res, next) {
 	var articles = [];
@@ -76,6 +82,8 @@ app.get('/get-articles', function(req, res, next) {
 	});
 });
 
+// saves single article to firebase
+// TODO check if article exists in firebase already (use url)
 app.post('/save-article', function(req, res, next) {
 	article = {
     "author": req.body.author,
@@ -91,6 +99,7 @@ app.post('/save-article', function(req, res, next) {
 	res.send("save-article success");
 });
 
+// remove single article from firebase
 app.post('/remove-article', function(req, res, next) {
 	res.send("not implemented yet");
 });
