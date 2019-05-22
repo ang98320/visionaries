@@ -106,7 +106,7 @@ app.post('/remove-article', function(req, res, next) {
 	//let keyToRemove = req.body.publishTime;
 	console.log(req);
 	let keyToRemove = req;
-	var setDoc = admin.firestore().collection('saved-articles').doc(keyToRemove).remove();
+	var setDoc = admin.firestore().collection('saved-articles').doc(keyToRemove).delete();
 	//res.send("not implemented yet");
 });
 

@@ -11,6 +11,7 @@ demo = 0  // will probably remove this later
 $(document).ready(function(){
   console.log("hello from savedarticle.js");
   getSavedArticles();
+  //removeArticle();
 });
 
 function getSavedArticles() {
@@ -26,21 +27,23 @@ function getSavedArticles() {
 }
 
 function removeArticle() {
-  //go up 3 levels to div parent class, pull index, remove this index from firebase
-  // parent levels should go from button .> li -> ul -> div
-  let altKey = $(this).parent().parent().parent().attr("alt");
-  $.ajax({
-    url: "/remove-article",
-    type: 'DELETE',
-    data: altKey,
-    processData: false,
-    contentType: 'application/json'
-  }).success(function (data) {
-    console.log(data);
-  });
-
+  console.log("Into removeArticle successfully!");
+  //figure out why #removeButton only works sometimes
   $(".removeButton").click(function(event) {
     event.preventDefault();
+    console.log("inside click function!");
+    //let altKey = $(this).parent().parent().parent().attr("alt");
+    let altKey = $(this).closest(".jumbotron").attr("alt");
+    console.log(altKey);
+    $.ajax({
+      url: "/remove-article",
+      type: 'PUT',
+      data: altKey,
+      processData: false,
+      contentType: 'application/json'
+    }).success(function (data) {
+      console.log(data);
+    });
     $(this).closest('.jumbotron').remove();
   });
   //figure out how to readjust every other jumbotron in the case that user would lke to remove
@@ -51,7 +54,7 @@ function removeArticle() {
 function updateUI(articles) {
   
   loadNewsArticles(articles);	
-  
+
   /*for (var i = 0; i < articles.length; i ++) {
     console.log(articles[i]);
     var jumbotron = createArticleJumbotron(articles[i], i);
