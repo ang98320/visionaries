@@ -68,9 +68,9 @@ app.get('/check-if-article-saved', function(req, res, next) {
 
 // load saved articles from firebase
 app.get('/get-articles', function(req, res, next) {
-	var articles = [];
-  var dbRef = admin.firestore().collection('saved-articles');
-	var getDoc = dbRef.get().then(snap => {
+	let articles = [];
+  	let dbRef = admin.firestore().collection('saved-articles');
+	let getDoc = dbRef.get().then(snap => {
 		snap.forEach(doc => {
 			console.log(doc.data());
 			articles.push(doc.data());
@@ -95,13 +95,19 @@ app.post('/save-article', function(req, res, next) {
     "urlToImage": req.body.urlToImage
   };
 	console.log(article);
-	var setDoc = admin.firestore().collection('saved-articles').doc().set(article);
+	let publishTime = "" + req.body.publishedAt;
+	console.log(publishTime);
+	var setDoc = admin.firestore().collection('saved-articles').doc(publishTime).set(article);
 	res.send("save-article success");
 });
 
 // remove single article from firebase
 app.post('/remove-article', function(req, res, next) {
-	res.send("not implemented yet");
+	//let keyToRemove = req.body.publishTime;
+	console.log(req);
+	let keyToRemove = req;
+	var setDoc = admin.firestore().collection('saved-articles').doc(keyToRemove).remove();
+	//res.send("not implemented yet");
 });
 
 // catch 404 and forward to error handler

@@ -49,11 +49,13 @@ function loadNewsArticles(articles) {
   console.log("total articles: " + articles.length);
   for (var i = 0; i < 8; i++) {
     console.log(articles[i].description);
+    console.log(articles[i].url);
     //check if a picture came with the article
     if($("#jumbotron-"+i != null))
       $("#jumbotron-"+i).css("background-image", "url("+articles[i].urlToImage+")");
     else
       $("#jumbotron-"+i).css("background-image", "url(https://icdn2.digitaltrends.com/image/news-apps-header-1500x1000.jpg)");
+    $("#jumbotron-"+i).attr("alt", articles[i].publishedAt);
     $("#title-"+i).html("<h1>"+articles[i].title+"</h1>");
     $("#article-"+i).html("<h2>"+articles[i].description+"</h2>");
     loadTimeToRead();

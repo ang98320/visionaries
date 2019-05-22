@@ -7,6 +7,10 @@ a {
   color: #00B7FF;
 }
 
+@font-face {
+  font-family: openDyslexic;
+  src: url(/fonts/OpenDyslexic-Regular.woff);
+}
 /* The Modal (background) */
 .modal1 {
   display: none; /* Hidden by default */

@@ -28,10 +28,21 @@ function getSavedArticles() {
 function removeArticle() {
   //go up 3 levels to div parent class, pull index, remove this index from firebase
   // parent levels should go from button .> li -> ul -> div
-  let index = $(this).parent().parent().parent().id;
-  index = index.splt("-").pop();
-  
+  let altKey = $(this).parent().parent().parent().attr("alt");
+  $.ajax({
+    url: "/remove-article",
+    type: 'DELETE',
+    data: altKey,
+    processData: false,
+    contentType: 'application/json'
+  }).success(function (data) {
+    console.log(data);
+  });
 
+  $(".removeButton").click(function(event) {
+    event.preventDefault();
+    $(this).closest('.jumbotron').remove();
+  });
   //figure out how to readjust every other jumbotron in the case that user would lke to remove
   //multiple articles.
 
@@ -40,6 +51,7 @@ function removeArticle() {
 function updateUI(articles) {
   
   loadNewsArticles(articles);	
+  
   /*for (var i = 0; i < articles.length; i ++) {
     console.log(articles[i]);
     var jumbotron = createArticleJumbotron(articles[i], i);
