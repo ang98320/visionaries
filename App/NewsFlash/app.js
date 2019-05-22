@@ -105,9 +105,9 @@ app.post('/save-article', function(req, res, next) {
 app.post('/remove-article', function(req, res, next) {
 	//let keyToRemove = req.body.publishTime;
 	console.log(req);
-	let keyToRemove = req;
+	let keyToRemove = req.body;
 	var setDoc = admin.firestore().collection('saved-articles').doc(keyToRemove).delete();
-	//res.send("not implemented yet");
+	res.send("remove-article run");
 });
 
 // catch 404 and forward to error handler
