@@ -70,7 +70,7 @@ function startReader() {
   if (speedreader)
   closeReader();
 
-  let words = text.split(" ");
+  let words = text.toString().split(" ");
   let numWords = words.length - 1;
   let index = 0;
 
