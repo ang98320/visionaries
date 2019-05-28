@@ -17,7 +17,7 @@
 4. 
 5. Screenshot of data visualization:
 
-| ![screenshot0](/Milestone%205/ui2.png) |
+| ![screenshot0](/Milestone%205/ui2.PNG) |
 |:--:|
 | *Data is shown as individual articles in jumbotrons with each article getting its own box. Each box is shown with Article title, content, time to read the article, and a picture from the article as the background* |
 
