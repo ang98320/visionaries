@@ -27,6 +27,20 @@ block body
 				.container
 					a.btn.btn-lg.btn-primary(id="article-button-demo" data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="demoSave()") Try Speed-Reading
 	.container
+		label(class="wordpm" for="wpm") Set words per minute:
+		input(id="wpm" class="wpmInput" type="number" min="0" value="120" onchange="loadTimeToRead()")
+		label(class="wordpm" for="wpm")
+	.container
+		label(class="wordpm")
+			| Set font:
+		select(class="wpmInput")
+			option(value="Helvetica Neue") Helvetica Neue
+			option(value="Arial") Arial
+			option(value="Georgia") Georgia
+			option(value="Verdana") Verdana
+			option(value="Courier New") Courier New
+			option(value="Lucida Console") Lucida Console
+	.container
 		.jumbotron
 			h2 Try it Yourself!
 			p

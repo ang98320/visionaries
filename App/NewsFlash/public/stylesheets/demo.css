@@ -5,3 +5,16 @@ h2 {
   padding: 2px;
   width: 100%;
 }
+
+.wordpm {
+  font-size: 18pt;
+  margin-left: 0px;
+  margin-bottom: 25px;
+  padding-right: 5px;
+}
+
+.wpmInput {
+  border-radius: 5px;
+  padding: 2px;
+  border: 2px solid #808080;
+}
