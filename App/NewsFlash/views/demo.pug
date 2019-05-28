@@ -2,8 +2,9 @@ extends ../node_modules/jade-bootstrap/_bootstrap
 append styles
 	// Custom styles for this template
 	//link(href='../css/navbar-static-top.css', rel='stylesheet')
+	link(href='stylesheets/demo.css', rel='stylesheet', type='text/css')
 	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
-	script(src='/javascripts/speedreader.js')
+	script(src='/javascripts/speedreaderdemo.js')
 block body
 	// Static navbar
 	+navbar-static("NewsFlash","navbar")
@@ -25,6 +26,12 @@ block body
 				| NewsFlash is the place to speed-read the most recent news articles. For the demo, click the button below!
 				.container
 					a.btn.btn-lg.btn-primary(id="article-button-demo" data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="demoSave()") Try Speed-Reading
+	.container
+		.jumbotron
+			h2 Try it Yourself!
+			p
+				| Type text into the following text box to test the speed reader with whatever you like.
+			textarea(id="demoBox" placeholder="Add Your Own Text!" rows="6")
 
 	.container
 		.row
