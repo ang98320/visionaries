@@ -14,9 +14,14 @@
 |:--:|
 | *Placeholder* |
 
-4. Our current UI has not changed at all since Milestone 4 since we are happy with how our previous UI turned out.
-5. 
-6. 
+4. 
+5. Screenshot of data visualization:
+
+| ![screenshot0](/Milestone%205/ui2.png) |
+|:--:|
+| *Data is shown as individual articles in jumbotrons with each article getting its own box. Each box is shown with Article title, content, time to read the article, and a picture from the article as the background* |
+
+6. We hooked up to Google's News API to pull trending articles. We used the Title, description, Content, and background image to populate each article box. 
 7. 
 8. We will present this during TA demonstration.
 We pull from Google's News API which works in real-time.
