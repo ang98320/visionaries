@@ -111,10 +111,13 @@ function initReader(id) {
 let speedreader = 0
 //function readText(text) {
 function startReader() {
-  if (currentArticle == "article-button-demo") {
-    text = demo;
-  } else {
     wpm = ((1/(document.getElementById("wpm").value/60))*1000);
+  if (currentArticle == "article-button-demo") {
+    text = document.getElementById("demoBox").value;
+    console.log(text);
+    //text = demo;
+  } else {
+    //wpm = ((1/(document.getElementById("wpm").value/60))*1000);
     idx = currentArticle.replace('article-button-','');
     text = data.articles[idx].content;
   }
@@ -142,6 +145,7 @@ function startReader() {
 }
 
 function closeReader() {
+  console.log("closing reader");
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
 }
@@ -182,7 +186,7 @@ function save(id) {
     document.getElementById(id).src = "images/save_icon_fill.png";
     $("#"+id).after('<p id="success">Added article to Saved!</p>');
     $("#success").delay(2000).fadeOut();
-    
+
     //Add article to save db
     saveArticle(article);
   } else {

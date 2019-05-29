@@ -10,7 +10,7 @@ block body
 	+navbar-static("NewsFlash","navbar")
 		+nav_item("/") Home
 		+nav_item("/saved") Saved
-		+nav_item("demo", "active") Demo
+		+nav_item("demo", "active") Getting Started
 		//+nav_item("#") Profile
 		//+nav_item_dropdown("#")(label="150 WPM")
 			//+nav_item("#") Action
@@ -37,19 +37,18 @@ block body
 		.jumbotron
 			h1 Welcome!
 			p
-				| NewsFlash is the place to speed-read the most recent news articles. For the demo, click the button below!
-				.container
-					a.btn.btn-lg.btn-primary(id="article-button-demo" data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="demoSave()") Try Speed-Reading
+				| NewsFlash is the place to speed-read the most recent news articles. For the demo, check out the panel below!
+				//.container
+					//a.btn.btn-lg.btn-primary(id="article-button-demo" data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="demoSave()") Try Speed-Reading
 	.container
 		.jumbotron
 			h2 Try it Yourself!
 			p
-				| Type text into the following text box to test the speed reader with whatever you like.
-			textarea(id="demoBox" placeholder="Add Your Own Text!" rows="6")
-			br
+			textarea(id="demoBox" placeholder="Type text into the following text box to test the speed reader with whatever you like." rows="6") Type text into the following text box to test the speed reader with whatever you like.
+			p
 				|
 			.container
-				a.btn.btn-lg.btn-primary(id="article-button-demo" data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="demoSave()") Try Speed-Reading
+			a.btn.btn-lg.btn-primary(id="article-button-demo" data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="initReader(this.id)") Try Speed-Reading
 
 
 	.container
