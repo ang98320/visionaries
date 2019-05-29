@@ -12,8 +12,8 @@
 
 | ![screenshot1](/Milestone%205/ui1.PNG) |
 |:--:|
-| ![screenshot2](/Milestone%205/ui3.PNG) |
-| ![screenshot3](/Milestone%205/ui2.PNG) |
+| ![screenshot2](/Milestone%205/ui3.png) |
+| ![screenshot3](/Milestone%205/ui4.png) |
 | *The new updated version allows the user to change the WPM speed and font. This edition also allows the user to add whatever they like to the text box to create their own speed reader.* |
 
 4. The screenshots in Milestone 4 were for our main page which included the news articles. We added more functionality by including a custom speed reader in the Demo page which is shown in the second screenshot.
