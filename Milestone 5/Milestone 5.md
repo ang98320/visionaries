@@ -10,7 +10,7 @@
 |:--:|
 | *This was our previous UI which included our demo speed reader and allowed the user to test the speed reader.* |
 
-| ![screenshot1](/Milestone%205/ui1.png) |
+| ![screenshot1](/Milestone%205/ui6.png) |
 |:--:|
 | ![screenshot2](/Milestone%205/ui3.png) |
 | ![screenshot3](/Milestone%205/ui4.png) |
