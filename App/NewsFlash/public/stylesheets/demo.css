@@ -1,6 +1,17 @@
 h2 {
   font-weight: bold;
 }
+
+@font-face {
+  font-family: 'openDyslexic';
+  src: url('/fonts/OpenDyslexic-Regular.woff');
+}
+
+@font-face {
+	font-family: 'LexieReadable';
+	src: url('/fonts/LexieReadable-Regular.ttf');
+}	
+
 #demoBox {
   padding: 2px;
   width: 100%;

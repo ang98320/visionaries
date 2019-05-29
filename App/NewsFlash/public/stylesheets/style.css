@@ -11,6 +11,11 @@ a {
   font-family: 'openDyslexic';
   src: url('/fonts/OpenDyslexic-Regular.woff');
 }
+
+@font-face {
+	font-family: 'LexieReadable';
+	src: url('fonts/LexieReadable-Regular.ttf');
+}	
 /* The Modal (background) */
 .modal1 {
   display: none; /* Hidden by default */

@@ -4,7 +4,8 @@ append styles
 	//link(href='../css/navbar-static-top.css', rel='stylesheet')
 	link(href='stylesheets/demo.css', rel='stylesheet', type='text/css')
 	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
-	script(src='/javascripts/speedreader.js')
+	//script(src='/javascripts/speedreader.js')
+	script(src='/javascripts/speedreaderdemo.js')
 block body
 	// Static navbar
 	+navbar-static("NewsFlash","navbar")
@@ -26,13 +27,19 @@ block body
 	.container
 		label(class="wordpm")
 			| Set font:
-		select(class="wpmInput")
-			option(value="Helvetica Neue") Helvetica Neue
-			option(value="Arial") Arial
-			option(value="Georgia") Georgia
-			option(value="Verdana") Verdana
-			option(value="Courier New") Courier New
-			option(value="Lucida Console") Lucida Console
+		select(class="wpmInput" onchange="fontChange()")
+			style(type="text/css").
+				font-family {
+					"Helvetica Neue !important";
+				}
+			option(value="Helvetica Neue" style="font-family: Helvetica Neue !important") Helvetica Neue
+			option(value="Arial" style="font-family: Arial !important") Arial
+			option(value="Georgia" style="font-family: Georgia !important") Georgia
+			option(value="Verdana" style="font-family: Veranda !important") Verdana
+			option(value="Courier New" style="font-family: Courier New !important") Courier New
+			option(value="Lucida Console" style="font-family: Lucida Console !important") Lucida Console
+			option(value="openDyslexic" style="font-family: openDyslexic !important") Open Dyslexic
+			option(value="LexieReadable" style="font-family: LexieReadable !important") LexieReadable
 	.container
 		.jumbotron
 			h1 Welcome!

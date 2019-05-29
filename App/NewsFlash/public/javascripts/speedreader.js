@@ -197,3 +197,11 @@ function save(id) {
   }
 
 }
+
+
+function fontChange() {
+	$(".wpmInput").change(function() {
+		$("*").css("font-family", $(this).val() + "!important");
+		console.log("font changed successful!");
+	});
+}

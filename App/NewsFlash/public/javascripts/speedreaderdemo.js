@@ -11,6 +11,7 @@ let wpm = 500;
 
 $(document).ready(function(){
   console.log("hello from speedreader.js");
+  fontChange();
 });
 
 function getTrendingNews(callback) {
@@ -89,4 +90,11 @@ function startReader() {
 function closeReader() {
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
+}
+
+function fontChange() {
+	$(".wpmInput").change(function() {
+		$(".container").css("font-family", $(this).val());
+		console.log("font changed successful!");
+	});
 }
