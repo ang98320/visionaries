@@ -22,7 +22,7 @@
 | *Data is shown as individual articles in jumbotrons with each article getting its own box. Each box is shown with Article title, content, time to read the article, and a picture from the article as the background* |
 
 6. We hooked up to Google's News API to pull trending articles. We used the Title, description, Content, and background image to populate each article box. 
-7. 
+7. In the future, we would like the background of each news article to pop out to the front after hovering the article for a few seconds. We would also like to make a more interactive speed reader where the speed reader WPM speed can be adjusted in real-time and also allow the user to fast-forward or rewing. We would also include progress tracking to show how many articles have been read, how long it took, and how often articles are read. Since we are also poor college students, we would present ads to finance this app.
 8. We will present this during TA demonstration.
 We pull from Google's News API which works in real-time.
 9. We will present this during TA demonstration.
