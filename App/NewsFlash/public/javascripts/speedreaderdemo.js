@@ -62,8 +62,8 @@ function initReader(id) {
 let speedreader = 0
 //function readText(text) {
 function startReader() {
-  text = demo;
-
+  //text = demo;
+  text = $("#demoBox").val()
   if(text == null)
     text = "Article_Text_Not_Found!";
   //if a speedreader interval is already open, close it and start a new one

@@ -100,7 +100,14 @@ app.post('/save-article', function(req, res, next) {
 	var setDoc = admin.firestore().collection('saved-articles').doc(publishTime).set(article);
 	res.send("save-article success");
 });
-
+/*
+app.post('/collection_size', function(res) {
+  lete size;
+  admin.firestore.collection('saved-articles').get().then(snap => {
+    size = snap.size;
+  });
+});
+*/
 // remove single article from firebase
 app.post('/remove-article', function(req, res, next) {
 	//let keyToRemove = req.body.publishTime;
