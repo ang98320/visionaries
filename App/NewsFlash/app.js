@@ -110,11 +110,13 @@ app.post('/collection_size', function(res) {
 */
 // remove single article from firebase
 app.post('/remove-article', function(req, res, next) {
+	let key = req.body.key;
+	console.log(key);
 	//let keyToRemove = req.body.publishTime;
-	console.log(req);
-	let keyToRemove = req.body;
-	var setDoc = admin.firestore().collection('saved-articles').doc(keyToRemove).delete();
-	res.send("remove-article run");
+	//console.log(req);
+	//let keyToRemove = req.body;
+	var setDoc = admin.firestore().collection('saved-articles').doc(key).delete();
+	res.send("remove-article success");
 });
 
 // catch 404 and forward to error handler

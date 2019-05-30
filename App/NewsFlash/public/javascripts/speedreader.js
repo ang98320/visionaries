@@ -198,6 +198,27 @@ function save(id) {
 
 }
 
+function removeArticle(id) {
+  console.log("called removeArticle:", id);
+  let idx = id.replace('jumbotron-','');
+  console.log(data.articles[idx].title)
+  console.log(data.articles[idx].publishedAt)
+  article = {
+    "key": data.articles[idx].publishedAt
+  }
+
+  $.ajax({
+    url: "/remove-article",
+    type: 'POST',
+    data: JSON.stringify(article),
+    processData: false,
+    contentType: 'application/json'
+  }).success(function (data) {
+    console.log(data);
+    $('#'+id).remove();
+  });
+}
+
 
 function fontChange() {
 	$(".wpmInput").change(function() {

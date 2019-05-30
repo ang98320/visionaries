@@ -15,7 +15,7 @@ a {
 @font-face {
 	font-family: 'LexieReadable';
 	src: url('fonts/LexieReadable-Regular.ttf');
-}	
+}
 /* The Modal (background) */
 .modal1 {
   display: none; /* Hidden by default */
@@ -73,6 +73,7 @@ a {
   overflow: hidden;
   background-repeat: no-repeat;
   background-size:100%;
+  padding: 20px;
 }
 
 .sharebtn {
@@ -140,6 +141,10 @@ p {
   background-color: rgba(0,0,0,.3);
   padding:5px;
   border-radius: 5px;
+  list-style: none;
+  background-color: black;
+  opacity: 0.85;
+  padding: 20px;
 }
 
 .wordpm {
