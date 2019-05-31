@@ -23,6 +23,8 @@ $(document).ready(function(){
     console.log(data.articles);
     //database.ref(storage).set(data.articles);
     loadNewsArticles(data.articles);
+    console.log(window.localStorage.font);
+    setFont(window.localStorage.font);
   });
 });
 
@@ -220,9 +222,9 @@ function removeArticle(id) {
 }
 
 
-function fontChange() {
-	$(".wpmInput").change(function() {
-		$("*").css("font-family", $(this).val() + "!important");
+function setFont(font) {
+	//$(".wpmInput").change(function() {
+		$("*").css("font-family", font);
 		console.log("font changed successful!");
-	});
+	//});
 }

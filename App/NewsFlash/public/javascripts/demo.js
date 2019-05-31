@@ -9,9 +9,21 @@ currentArticle = 0
 demo = 0  // will probably remove this later
 let wpm = 500;
 
+fonts = {
+  "Helvetica Neue": 0,
+  "Arial": 1,
+  "Georgia": 2,
+  "Verdana": 3,
+  "Courier New": 4,
+  "Lucida Console": 5,
+  "Open Dyslexic": 6,
+  "LexieReadable": 7
+}
+
 $(document).ready(function(){
-  console.log("hello from speedreader.js");
-  fontChange();
+  console.log("hello from demo.js");
+  console.log(window.localStorage.font);
+  setFont(window.localStorage.font);
 });
 
 function getTrendingNews(callback) {
@@ -92,9 +104,16 @@ function closeReader() {
   clearInterval(speedreader);
 }
 
+function setFont(font) {
+  $('#fontSelect')[0].selectedIndex=fonts[font];//.trigger("chosen:updated");
+	$("*").css("font-family", font);
+	console.log("font changed successful!");
+}
+
 function fontChange() {
-	$(".wpmInput").change(function() {
-		$(".container").css("font-family", $(this).val());
-		console.log("font changed successful!");
-	});
+  $(".container").css("font-family", $('#fontSelect').find(":selected").text());
+  $("*").css("font-family", $('#fontSelect').find(":selected").text());
+  console.log("changing font!");
+  window.localStorage.font = $('#fontSelect').find(":selected").text();
+  console.log(window.localStorage.font);
 }

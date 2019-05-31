@@ -14,8 +14,9 @@ a {
 
 @font-face {
 	font-family: 'LexieReadable';
-	src: url('fonts/LexieReadable-Regular.ttf');
+	src: url('/fonts/LexieReadable-Regular.ttf');
 }
+
 /* The Modal (background) */
 .modal1 {
   display: none; /* Hidden by default */

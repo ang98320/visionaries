@@ -92,40 +92,14 @@ function removeArticle(id) {
   });
 }
 
-
-/*
-function removeArticle(article) {
-  console.log("called removeArticle:", article);
-  //figure out why #removeButton only works sometimes
-  //$(".removeButton").click(function(event) {
-    //event.preventDefault();
-    //console.log("inside click function!");
-    //let altKey = $(this).parent().parent().parent().attr("alt");
-
-    let altKey = $(this).closest(".jumbotron").attr("alt");
-    console.log(altKey);
-    $.ajax({
-      url: "/remove-article",
-      type: 'POST',
-      data: altKey,
-      processData: false,
-      contentType: 'application/json'
-    }).success(function (data) {
-      console.log(data);
-    });
-    $(this).closest('.jumbotron').remove();
-  //});
-  //figure out how to readjust every other jumbotron in the case that user would lke to remove
-  //multiple articles.
-
-}*/
-
 function updateUI(articles) {
   for (var i = 0; i < articles.length; i ++) {
     console.log(articles[i]);
     var jumbotron = createArticleJumbotron(articles[i], i);
     var html = document.getElementById("saved-content").appendChild(jumbotron);
   }
+  console.log(window.localStorage.font);
+  setFont(window.localStorage.font)
   loadTimeToRead();
 }
 
@@ -227,4 +201,11 @@ function closeReader() {
   console.log("closing reader");
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
+}
+
+function setFont(font) {
+	//$(".wpmInput").change(function() {
+		$("*").css("font-family", font);
+		console.log("font changed successful!");
+	//});
 }
