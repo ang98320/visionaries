@@ -26,54 +26,12 @@ $(document).ready(function(){
   setFont(window.localStorage.font);
 });
 
-function getTrendingNews(callback) {
-  var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=us&' +
-          'apiKey=a4a03d7d0df7480e8b52461a0e39fb77';
-  var req = new Request(url);
-  fetch(req)
-      .then(function(response) {
-          //console.log(response.json());
-          return response.json();
-      })
-      .then(function(json) {
-        data = json
-  //use variable articles from here on to access articles, as savedarticle.js doesn't need to use the data variable in its context
-  articles = data.articles
-        callback();
-      })
-}
-
-function demoSave() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
-    }
-  };
-  xhttp.open("GET", "/demo-save", true);
-  xhttp.send();
-}
-
-function demoAjax() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     currentArticle = "article-button-demo";
-     demo = this.responseText;
-    }
-  };
-  xhttp.open("GET", "/demo-speedreader", true);
-  xhttp.send();
-}
-
 function initReader(id) {
   console.log(id);
   currentArticle = id;
 }
 
 let speedreader = 0
-//function readText(text) {
 function startReader() {
   //text = demo;
   text = $("#demoBox").val()

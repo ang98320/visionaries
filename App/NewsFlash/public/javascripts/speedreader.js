@@ -50,8 +50,17 @@ function loadNewsArticles(articles) {
 
   console.log("total articles: " + articles.length);
   for (var i = 0; i < 8; i++) {
-    console.log(articles[i].description);
-    console.log(articles[i].url);
+    //console.log(articles[i]);
+    //console.log(articles[i].description);
+    //console.log(articles[i].url);
+    if (!articles[i].content) {
+      console.log("article missing content");
+      articles[i].content = articles[i].description;
+    }
+    if (!articles[i].author) {
+      console.log("article author missing");
+      articles[i].author = "Unknown Author";
+    }
     //check if a picture came with the article
     if($("#jumbotron-"+i != null))
       $("#jumbotron-"+i).css("background-image", "url("+articles[i].urlToImage+")");

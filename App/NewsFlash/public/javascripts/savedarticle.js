@@ -46,8 +46,8 @@ function loadNewsArticles(articles) {
   }
 }
 
-function loadTimeToRead() {
-  for (var i = 0; i < 8; i++) {
+function loadTimeToRead(articles) {
+  for (var i = 0; i < articles.length; i++) {
     $("#footer-"+i).html("<p>"+calcTimeToRead(articles[i])+"</p>");
   }
 }
@@ -100,7 +100,7 @@ function updateUI(articles) {
   }
   console.log(window.localStorage.font);
   setFont(window.localStorage.font)
-  loadTimeToRead();
+  loadTimeToRead(articles);
 }
 
 function createArticleJumbotron(article, i) {
