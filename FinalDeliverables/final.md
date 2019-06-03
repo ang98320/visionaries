@@ -18,5 +18,7 @@
     * index.pug - frontend for main page
     * saved.pug - frontend for saved page
     * demo.pug - frontend for demo (getting started) page
+    * style.css - css for index.pug and saved.pug
+    * demo.css - css for demo.pug
 4. [Link to Single Slide Presentation](https://www.google.com)
 5. [Link to Demo Video](https://www.google.com)
