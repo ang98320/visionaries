@@ -96,7 +96,7 @@ function initReader(id) {
 
 // Starts the speed reader when the "read" button is pressed
 function startReader() {
-    wpm = ((1/(document.getElementById("wpm").value/60))*1000);
+  wpm = ((1/(document.getElementById("wpm").value/60))*1000);
   if (currentArticle == "article-button-demo") {
     text = document.getElementById("demoBox").value;
     console.log(text);

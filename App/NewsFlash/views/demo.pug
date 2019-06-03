@@ -12,7 +12,7 @@ block body
 		+nav_item("demo", "active") Getting Started
 	.container
 		label(class="wordpm" for="wpm") Set words per minute:
-		input(id="wpm" class="wpmInput" type="number" min="0" value="120" onchange="loadTimeToRead()")
+		input(id="wpm" class="wpmInput" type="number" min="0" value="120")
 		label(class="wordpm" for="wpm")
 	.container
 		label(class="wordpm")
@@ -56,10 +56,11 @@ block body
 					div(class="modal-header")
 						button(type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="closeReader()") &times;
 						button(type="button" onclick="startReader()" class="btn btn-primary") Start
+						br
 
 					div(class="modal-body")
 
-					#test_area(style="text-align:center;")
+						#test_area(class="words" style="text-align:center;")
 
 					div(class="modal-footer")
 

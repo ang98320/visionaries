@@ -40,6 +40,8 @@ function initReader(id) {
 
 // Opens the Speed Reader when the "Read" button is pressed
 function startReader() {
+  wpm = ((1/(document.getElementById("wpm").value/60))*1000);
+  console.log("reading at", document.getElementById("wpm").value, "wpm");
   text = $("#demoBox").val()
   if(text == null)
     text = "Article_Text_Not_Found!";
@@ -50,8 +52,7 @@ function startReader() {
   let numWords = words.length - 1;
   let index = 0;
 
-  if(wpm == "Infinity" || wpm == "")
-    wpm = 500;
+  if(wpm == "Infinity" || wpm == "") wpm = 500;
 
   speedreader = setInterval(function(){
     if (words[index] != null) {
