@@ -21,6 +21,7 @@ $(document).ready(function(){
   getSavedArticles();
 });
 
+// Loads the saved articles from Firebase
 function getSavedArticles() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -33,6 +34,7 @@ function getSavedArticles() {
   xhttp.send();
 }
 
+// Removes a saved article from Firebase
 function removeArticle(id) {
   console.log("called removeArticle:", id);
   let idx = id.replace('jumbotron-','');
@@ -53,6 +55,7 @@ function removeArticle(id) {
   });
 }
 
+// Fills the page with article jumbotrons
 function updateUI(articles) {
   for (var i = 0; i < articles.length; i ++) {
     console.log(articles[i]);
@@ -64,6 +67,7 @@ function updateUI(articles) {
   loadTimeToRead(articles);
 }
 
+// Creates article jumbotrons using saved articles
 function createArticleJumbotron(article, i) {
   var ul = document.createElement("ul")
   ul.className = "articleItems";
@@ -117,12 +121,15 @@ function createArticleJumbotron(article, i) {
   return jumbotron;
 }
 
+// Loads the time to read each article into the jumbotron
 function loadTimeToRead(articles) {
   for (var i = 0; i < articles.length; i++) {
     $("#footer-"+i).html("<p>"+calcTimeToRead(articles[i])+"</p>");
   }
 }
 
+
+// Helper method that calculates the time to read for use in loadtimetoread(articles)
 function calcTimeToRead(article) {
   if(article.content)
     words = article.content.split(" ");
@@ -137,11 +144,13 @@ function calcTimeToRead(article) {
   return (readTime + " minutes to read at "+wpm+" words per minute.");
 }
 
+// Sets the article content as speed reader content
 function initReader(id) {
   console.log("initReader", id);
   currentArticle = id;
 }
 
+// Starts the speed reader
 function startReader() {
   wpm = ((1/(document.getElementById("wpm").value/60))*1000);
   if (currentArticle == "article-button-demo") {
@@ -170,12 +179,14 @@ function startReader() {
   }, wpm);
 }
 
+// Closes and stops the speed reader
 function closeReader() {
   console.log("closing reader");
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
 }
 
+// Sets the font set by the Demo page
 function setFont(font) {
   $("*").css("font-family", font);
   console.log("font changed successful!");

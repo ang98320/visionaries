@@ -26,6 +26,7 @@ $(document).ready(function(){
   });
 });
 
+// Gets the trending news from Google's API
 function getTrendingNews(callback) {
   var url = 'https://newsapi.org/v2/top-headlines?' +
           'country=us&' +
@@ -42,6 +43,7 @@ function getTrendingNews(callback) {
       })
 }
 
+// Loads the article's contents into jumbotrons to be shown on the main page
 function loadNewsArticles(articles) {
 
   console.log("total articles: " + articles.length);
@@ -65,12 +67,14 @@ function loadNewsArticles(articles) {
   }
 }
 
+// Loads the time to read into the jumbotron
 function loadTimeToRead() {
   for (var i = 0; i < 8; i++) {
     $("#footer-"+i).html("<p>"+calcTimeToRead(articles[i])+"</p>");
   }
 }
 
+// Calculates the time to read for each article
 function calcTimeToRead(article) {
   if(article.content)
     words = article.content.split(" ");
@@ -84,11 +88,13 @@ function calcTimeToRead(article) {
   return (readTime + " minutes to read at "+wpm+" words per minute.");
 }
 
+// Sets the article's contents into the speed reader
 function initReader(id) {
   console.log(id);
   currentArticle = id;
 }
 
+// Starts the speed reader when the "read" button is pressed
 function startReader() {
     wpm = ((1/(document.getElementById("wpm").value/60))*1000);
   if (currentArticle == "article-button-demo") {
@@ -116,12 +122,14 @@ function startReader() {
   }, wpm);
 }
 
+// Closes and clears the speed reader
 function closeReader() {
   console.log("closing reader");
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
 }
 
+// Saves the article into Firebase when the save button is pressed
 function saveArticle(article) {
   $.ajax({
     url: "/save-article",
@@ -134,6 +142,7 @@ function saveArticle(article) {
   });
 }
 
+// Saves the content of each article into firebase
 function save(id) {
   idx = id.replace('save-button','');
   article = {
@@ -157,6 +166,7 @@ function save(id) {
   }
 }
 
+// Removes the saved article from Firebase
 function removeArticle(id) {
   console.log("called removeArticle:", id);
   let idx = id.replace('jumbotron-','');
@@ -177,7 +187,7 @@ function removeArticle(id) {
   });
 }
 
-
+// Sets the font throughout the website
 function setFont(font) {
   $("*").css("font-family", font);
   console.log("font changed successful!");
@@ -194,6 +204,7 @@ function demoSave() {
   xhttp.send();
 }
 
+// Loads the content from the text box from the Demo page into the speed reader
 function demoAjax() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {

@@ -32,11 +32,13 @@ $(document).ready(function(){
   setFont(window.localStorage.font);
 });
 
+// Sets the current article to be the content of the speed reader
 function initReader(id) {
   console.log(id);
   currentArticle = id;
 }
 
+// Opens the Speed Reader when the "Read" button is pressed
 function startReader() {
   text = $("#demoBox").val()
   if(text == null)
@@ -59,17 +61,20 @@ function startReader() {
   }, wpm);
 }
 
+// Closes and stops the speed reader
 function closeReader() {
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
 }
 
+// Sets the font using the drop-down selector
 function setFont(font) {
   $('#fontSelect')[0].selectedIndex=fonts[font];
 	$("*").css("font-family", font);
 	console.log("font changed successful!");
 }
 
+// Changes the font throughout the website
 function fontChange() {
   $(".container").css("font-family", $('#fontSelect').find(":selected").text());
   $("*").css("font-family", $('#fontSelect').find(":selected").text());
