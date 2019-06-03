@@ -1,10 +1,7 @@
 extends ../node_modules/jade-bootstrap/_bootstrap
 append styles
-	// Custom styles for this template
-	//link(href='../css/navbar-static-top.css', rel='stylesheet')
 	link(href='stylesheets/demo.css', rel='stylesheet', type='text/css')
 	script(src='https://code.jquery.com/jquery-3.4.0.min.js')
-	//script(src='/javascripts/speedreader.js')
 	script(src='/javascripts/demo.js')
 
 block body
@@ -13,14 +10,6 @@ block body
 		+nav_item("/") Home
 		+nav_item("/saved") Saved
 		+nav_item("demo", "active") Getting Started
-		//+nav_item("#") Profile
-		//+nav_item_dropdown("#")(label="150 WPM")
-			//+nav_item("#") Action
-			//+nav_item("#") Another action
-			//+nav_item("#") Something else here
-			//+nav_divider
-			//+nav_item("#") Separated link
-			//+nav_item("#") One more separated link
 	.container
 		label(class="wordpm" for="wpm") Set words per minute:
 		input(id="wpm" class="wpmInput" type="number" min="0" value="120" onchange="loadTimeToRead()")
@@ -46,8 +35,6 @@ block body
 			h1 Welcome!
 			p
 				| NewsFlash is the place to speed-read the most recent news articles. For the demo, check out the panel below!
-				//.container
-					//a.btn.btn-lg.btn-primary(id="article-button-demo" data-toggle="modal" href="#normalModal" class="btn btn-default" onclick="demoSave()") Try Speed-Reading
 	.container
 		.jumbotron
 			h2 Try it Yourself!
@@ -68,7 +55,6 @@ block body
 				div(class="modal-content")
 					div(class="modal-header")
 						button(type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="closeReader()") &times;
-						//h4(class="modal-title") Title
 						button(type="button" onclick="startReader()" class="btn btn-primary") Start
 
 					div(class="modal-body")
@@ -76,9 +62,7 @@ block body
 					#test_area(style="text-align:center;")
 
 					div(class="modal-footer")
-						//button(type="button" onclick="startReader()" class="btn btn-primary") Start
 
-					//#test_area(style="text-align:center;")
 						#test_main
 
 		//thanks to https://codepen.io/DawsonMediaD/pen/byDqv

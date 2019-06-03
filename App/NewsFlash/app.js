@@ -1,3 +1,8 @@
+/*
+* app.js
+* This is the config and routing file for the NewsFlash App.
+*/
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -29,8 +34,6 @@ admin.initializeApp({
 
 var app = express();
 
-//let defaultStorage = firebase.database();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -60,13 +63,7 @@ app.get('/demo-speedreader', function(req, res, next) {
   res.send("This is a demo of a speed reader. You are reading at 120 WPM! That's amazing! Do we have your attention now!?");
 });
 
-// use this to check if article in home is saved
-// if so, use this to star the saved articles in home
-app.get('/check-if-article-saved', function(req, res, next) {
-	res.send("not implemented")
-});
-
-// load saved articles from firebase
+// get saved articles from firebase
 app.get('/get-articles', function(req, res, next) {
 	let articles = [];
   	let dbRef = admin.firestore().collection('saved-articles');
@@ -82,8 +79,7 @@ app.get('/get-articles', function(req, res, next) {
 	});
 });
 
-// saves single article to firebase
-// TODO check if article exists in firebase already (use url)
+// write single article to firebase
 app.post('/save-article', function(req, res, next) {
 	article = {
     "author": req.body.author,
@@ -100,21 +96,11 @@ app.post('/save-article', function(req, res, next) {
 	var setDoc = admin.firestore().collection('saved-articles').doc(publishTime).set(article);
 	res.send("save-article success");
 });
-/*
-app.post('/collection_size', function(res) {
-  lete size;
-  admin.firestore.collection('saved-articles').get().then(snap => {
-    size = snap.size;
-  });
-});
-*/
+
 // remove single article from firebase
 app.post('/remove-article', function(req, res, next) {
 	let key = req.body.key;
 	console.log(key);
-	//let keyToRemove = req.body.publishTime;
-	//console.log(req);
-	//let keyToRemove = req.body;
 	var setDoc = admin.firestore().collection('saved-articles').doc(key).delete();
 	res.send("remove-article success");
 });

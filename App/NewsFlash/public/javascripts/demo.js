@@ -1,13 +1,19 @@
-// Google News API Key
-// a4a03d7d0df7480e8b52461a0e39fb77
-// Firebase API AIzaSyDYKhmDPqTGt1y52M1MI9VVnC0T6zXJML8
+/*
+* demo.js
+* This is the backend for demo.pug
+* Upon successful loading of demo.pug, this file updates the font of the entire page
+* with the last pre-selected user font. This file also changes the selected font when
+* the user selects a new font in demo.pug.
+* This file is also capable of loading a speedreader.
+* This file is also capable of setting WPM.
+*/
 
-//uncaught exception: [DEFAULT]: Firebase: No Firebase App '[DEFAULT]' has been created - call Firebase App.initializeApp() (app/no-app).
-data = 0
-articles = 0
-currentArticle = 0
-demo = 0  // will probably remove this later
+let data = 0;
+let articles = 0;
+let currentArticle = 0;
+let demo = 0;
 let wpm = 500;
+let speedreader = 0;
 
 fonts = {
   "Helvetica Neue": 0,
@@ -18,7 +24,7 @@ fonts = {
   "Lucida Console": 5,
   "Open Dyslexic": 6,
   "LexieReadable": 7
-}
+};
 
 $(document).ready(function(){
   console.log("hello from demo.js");
@@ -31,13 +37,10 @@ function initReader(id) {
   currentArticle = id;
 }
 
-let speedreader = 0
 function startReader() {
-  //text = demo;
   text = $("#demoBox").val()
   if(text == null)
     text = "Article_Text_Not_Found!";
-  //if a speedreader interval is already open, close it and start a new one
   if (speedreader)
   closeReader();
 
@@ -48,7 +51,6 @@ function startReader() {
   if(wpm == "Infinity" || wpm == "")
     wpm = 500;
 
-  //Open a new interval with speed (ms) based on wpm input
   speedreader = setInterval(function(){
     if (words[index] != null) {
       $("#test_area").html("<h4>"+words[index]+"</h4>");
@@ -63,7 +65,7 @@ function closeReader() {
 }
 
 function setFont(font) {
-  $('#fontSelect')[0].selectedIndex=fonts[font];//.trigger("chosen:updated");
+  $('#fontSelect')[0].selectedIndex=fonts[font];
 	$("*").css("font-family", font);
 	console.log("font changed successful!");
 }
