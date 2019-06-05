@@ -1,3 +1,8 @@
+/*
+* demo.css
+* CSS file for demo.pug
+*/
+
 h2 {
   font-weight: bold;
 }
@@ -15,6 +20,7 @@ h2 {
 #demoBox {
   padding: 2px;
   width: 100%;
+  font-size: 20px;
 }
 
 .wordpm {
@@ -32,4 +38,60 @@ h2 {
 
 .navbar {
   box-shadow: 0px 2px 5px grey;
+}
+
+/* The Modal (background) */
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  text-align: center;
+}
+
+/* Modal Content */
+.modal-content1 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  z-index: 2;
+}
+
+.modal-body {
+  font-family: openDyslexic;
+}
+
+
+.words {
+  color: black;
+  size: 24pt;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h4 {
+  color: black;
+  font-size: 42pt;
 }

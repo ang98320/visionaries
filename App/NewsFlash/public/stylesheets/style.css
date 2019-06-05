@@ -1,5 +1,9 @@
+/*
+* style.css
+* CSS file for index.pug and saved.pug
+*/
+
 body {
-  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -121,20 +125,18 @@ h2 {
   font-size:18pt;
   color: black;
   -webkit-text-fill-color: white;
-  /*-webkit-text-stroke-width: 1px;*/
   -webkit-text-stroke-color: black;
 }
 
 h4 {
   color: black;
-  font-size: 24pt;
+  font-size: 42pt;
 }
 
 p {
   padding-top:5px;
   font-size: 12pt;
   -webkit-text-fill-color: white;
-  /*-webkit-text-stroke-width: 1px;*/
   -webkit-text-stroke-color: black;
 }
 
