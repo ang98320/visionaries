@@ -22,3 +22,4 @@
     * demo.css - css for demo.pug
 4. [Link to Single Slide Presentation](https://docs.google.com/presentation/d/1O-Iupo4nQQSXmfqYuAtmOCb_qAula7h3UxM9fGdzWO0/edit?usp=sharing)
 5. [Link to Demo Video](https://youtu.be/1rbCbwQQRlw)
+   [Alternate link (has a watermark)](https://youtu.be/sgprUqLRhX4)
