@@ -105,7 +105,7 @@ function startReader() {
     text = data.articles[idx].content;
   }
 
-  if (text == null) text = "Article_Text_Not_Found!";
+  if (text == null) text = data.articles[idx].description;
   if (speedreader) closeReader();
 
   let words = text.split(" ");
