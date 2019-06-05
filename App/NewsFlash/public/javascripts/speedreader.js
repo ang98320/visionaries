@@ -26,7 +26,7 @@ $(document).ready(function(){
   });
 });
 
-// Gets the trending news from Google's API
+// Gets the trending news from NewsAPI.org
 function getTrendingNews(callback) {
   var url = 'https://newsapi.org/v2/top-headlines?' +
           'country=us&' +
@@ -88,13 +88,13 @@ function calcTimeToRead(article) {
   return (readTime + " minutes to read at "+wpm+" words per minute.");
 }
 
-// Sets the article's contents into the speed reader
+// sets currentArticle with id (called when Read button is clicked in index.pug)
 function initReader(id) {
   console.log(id);
   currentArticle = id;
 }
 
-// Starts the speed reader when the "read" button is pressed
+// Starts speedreading article content of currentArticle (called when Start button in Modal is clicked in index.pug)
 function startReader() {
   wpm = ((1/(document.getElementById("wpm").value/60))*1000);
   if (currentArticle == "article-button-demo") {
@@ -122,7 +122,7 @@ function startReader() {
   }, wpm);
 }
 
-// Closes and clears the speed reader
+// Closes the speed reader
 function closeReader() {
   console.log("closing reader");
   $("#test_area").html("<h3></h3>");
@@ -142,7 +142,7 @@ function saveArticle(article) {
   });
 }
 
-// Saves the content of each article into firebase
+// Prepares article to be saved
 function save(id) {
   idx = id.replace('save-button','');
   article = {
@@ -187,12 +187,13 @@ function removeArticle(id) {
   });
 }
 
-// Sets the font throughout the website
+// called to change page font after document is ready
 function setFont(font) {
   $("*").css("font-family", font);
   console.log("font changed successful!");
 }
 
+//for testing purposes only
 function demoSave() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -204,7 +205,7 @@ function demoSave() {
   xhttp.send();
 }
 
-// Loads the content from the text box from the Demo page into the speed reader
+//for testing purposes only
 function demoAjax() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {

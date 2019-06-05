@@ -32,13 +32,13 @@ $(document).ready(function(){
   setFont(window.localStorage.font);
 });
 
-// Sets the current article to be the content of the speed reader
+// sets currentArticle with id (called when Read button is clicked in demo.pug)
 function initReader(id) {
   console.log(id);
   currentArticle = id;
 }
 
-// Opens the Speed Reader when the "Read" button is pressed
+// Starts speedreading article content of currentArticle (called when Start button in Modal is clicked in demo.pug)
 function startReader() {
   wpm = ((1/(document.getElementById("wpm").value/60))*1000);
   console.log("reading at", document.getElementById("wpm").value, "wpm");
@@ -62,13 +62,13 @@ function startReader() {
   }, wpm);
 }
 
-// Closes and stops the speed reader
+// Closes speedreader
 function closeReader() {
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
 }
 
-// Sets the font using the drop-down selector
+// called to change page font after document is ready
 function setFont(font) {
   $('#fontSelect')[0].selectedIndex=fonts[font];
 	$("*").css("font-family", font);

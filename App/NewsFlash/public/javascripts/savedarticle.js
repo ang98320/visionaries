@@ -67,7 +67,7 @@ function updateUI(articles) {
   loadTimeToRead(articles);
 }
 
-// Creates article jumbotrons using saved articles
+// Creates a article jumbotrons given a saved articles
 function createArticleJumbotron(article, i) {
   var ul = document.createElement("ul")
   ul.className = "articleItems";
@@ -144,13 +144,13 @@ function calcTimeToRead(article) {
   return (readTime + " minutes to read at "+wpm+" words per minute.");
 }
 
-// Sets the article content as speed reader content
+// sets currentArticle with id (called when Read button is clicked in saved.pug)
 function initReader(id) {
   console.log("initReader", id);
   currentArticle = id;
 }
 
-// Starts the speed reader
+// Starts speedreading article content of currentArticle (called when Start button in Modal is clicked in saved.pug)
 function startReader() {
   wpm = ((1/(document.getElementById("wpm").value/60))*1000);
   if (currentArticle == "article-button-demo") {
@@ -179,14 +179,14 @@ function startReader() {
   }, wpm);
 }
 
-// Closes and stops the speed reader
+// Closes the speed reader
 function closeReader() {
   console.log("closing reader");
   $("#test_area").html("<h3></h3>");
   clearInterval(speedreader);
 }
 
-// Sets the font set by the Demo page
+// called to change page font after document is ready
 function setFont(font) {
   $("*").css("font-family", font);
   console.log("font changed successful!");
